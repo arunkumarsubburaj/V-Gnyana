@@ -30,8 +30,6 @@ h2 {
 
 .textbox {
   position: relative;
-  border-radius: 3px;
-  overflow: hidden;
   margin-bottom: 30px;
   input {
     width: 100%;
@@ -43,6 +41,11 @@ h2 {
     outline: 0;
     border: 0;
     background: #fff;
+    border-radius: 3px;
+    transition: 0.15s;
+    &:focus {
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    }
   }
   &::before {
     position: absolute;

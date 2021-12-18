@@ -25,6 +25,14 @@ body {
   font-weight: 500;
   background: #ffb300;
   border-radius: 3px;
+  cursor: pointer;
+  transition: 0.12s;
+  &:hover {
+    background: #eba80e;
+  }
+  &:active {
+    transform: scale(0.96);
+  }
 }
 
 [hidden] {
