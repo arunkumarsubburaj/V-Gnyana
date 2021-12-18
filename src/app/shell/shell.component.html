@@ -1,0 +1,13 @@
+<div id="baseWrapper">
+  <header class="header">
+    <nav>
+      <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+      <a [routerLink]="['/login']" routerLinkActive="active">SignIn</a>
+      <a [routerLink]="['/logout']" routerLinkActive="active">Signout</a>
+    </nav>
+  </header>
+  <div class="body">
+    <router-outlet></router-outlet>
+  </div>
+  <footer class="footer"><h2>V-Gnyana</h2></footer>
+</div>
