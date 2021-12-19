@@ -136,3 +136,24 @@ body {
     }
   }
 }
+.mainFooter {
+  background: #4f4f4f;
+  padding: 40px;
+  margin-top: 50px;
+  > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-right: 12px;
+      color: #eee;
+    }
+    img {
+      max-height: 100px;
+    }
+  }
+}
