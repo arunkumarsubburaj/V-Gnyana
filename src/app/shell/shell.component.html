@@ -1,13 +1,27 @@
-<div id="baseWrapper">
-  <header class="header">
-    <nav>
-      <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
-      <a [routerLink]="['/login']" routerLinkActive="active">SignIn</a>
-      <a [routerLink]="['/logout']" routerLinkActive="active">Signout</a>
+<div class="mainWrap">
+  <header class="mainHeader">
+    <div class="logoRow">
+      <div class="poweredBy">
+        <img src="../../assets/images/lti.png" alt="">
+        <img src="../../assets/images/step.png" alt="">
+      </div>
+      <div class="brandLogo">
+        <img src="../../assets/images/main.png" alt="">
+      </div>
+      <div class="organisedBy">
+        <img src="../../assets/images/e-vidyaloka.png" alt="">
+      </div>
+    </div>
+    <nav class="mainNav">
+      <a [routerLink]="['/home']" routerLinkActive="active"><i class="icon-about-us"></i><span>About</span></a>
+      <a [routerLink]="['/fixtures']" routerLinkActive="active"><i class="icon-fixture"></i><span>Fixtures</span></a>
+      <a [routerLink]="['/results']" routerLinkActive="active"><i class="icon-results"></i><span>Results</span></a>
+      <a [routerLink]="['/login']" routerLinkActive="active"><i class="icon-login"></i><span>Login</span></a>
+      <!-- <a [routerLink]="['/logout']" routerLinkActive="active"><i class="icon-about-us"></i><span>About</span></a> -->
     </nav>
   </header>
-  <div class="bodyContent">
-    <router-outlet></router-outlet>
-  </div>
-  <footer class="footer"><h2>V-Gnyana</h2></footer>
+  <router-outlet></router-outlet>
+  <footer class="mainFooter">
+
+  </footer>
 </div>
