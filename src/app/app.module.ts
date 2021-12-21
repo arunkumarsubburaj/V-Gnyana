@@ -14,9 +14,17 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthService } from 'src/shared/services/auth.service';
 import { LoaderComponent } from './loader/loader.component';
 import { HomeComponent } from './home/home.component';
+import { AddScoresComponent } from './add-scores/add-scores.component';
 
 @NgModule({
-  declarations: [AppComponent, ShellComponent, LoginComponent, LoaderComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    ShellComponent,
+    LoginComponent,
+    LoaderComponent,
+    HomeComponent,
+    AddScoresComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

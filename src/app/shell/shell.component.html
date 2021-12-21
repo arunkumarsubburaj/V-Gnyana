@@ -2,29 +2,39 @@
   <header class="mainHeader">
     <div class="logoRow">
       <div class="poweredBy">
-        <img src="../../assets/images/lti.png" alt="">
-        <img src="../../assets/images/step.png" alt="">
+        <img src="../../assets/images/lti.png" alt="" />
+        <img src="../../assets/images/step.png" alt="" />
       </div>
       <div class="brandLogo">
-        <img src="../../assets/images/main.png" alt="">
+        <img src="../../assets/images/main.png" alt="" />
       </div>
       <div class="organisedBy">
-        <img src="../../assets/images/e-vidyaloka.png" alt="">
+        <img src="../../assets/images/e-vidyaloka.png" alt="" />
       </div>
     </div>
     <nav class="mainNav">
-      <a [routerLink]="['/home']" routerLinkActive="active"><i class="icon-about-us"></i><span>About</span></a>
-      <a [routerLink]="['/fixtures']" routerLinkActive="active"><i class="icon-fixture"></i><span>Fixtures</span></a>
-      <a [routerLink]="['/results']" routerLinkActive="active"><i class="icon-results"></i><span>Results</span></a>
-      <a [routerLink]="['/login']" routerLinkActive="active"><i class="icon-login"></i><span>Login</span></a>
-      <!-- <a [routerLink]="['/logout']" routerLinkActive="active"><i class="icon-about-us"></i><span>About</span></a> -->
+      <a [routerLink]="['/home']" routerLinkActive="active"
+        ><i class="icon-about-us"></i><span>About</span></a
+      >
+      <a [routerLink]="['/fixtures']" routerLinkActive="active"
+        ><i class="icon-fixture"></i><span>Fixtures</span></a
+      >
+      <a [routerLink]="['/results']" routerLinkActive="active"
+        ><i class="icon-results"></i><span>Results</span></a
+      >
+      <a [routerLink]="['/login']" routerLinkActive="active" *ngIf="!isLoggedIn"
+        ><i class="icon-login"></i><span>Login</span></a
+      >
+      <a *ngIf="isLoggedIn" (click)="logout()" class="logoutBtn"
+        ><i class="icon-login"></i><span>Logout</span></a
+      >
     </nav>
   </header>
   <router-outlet></router-outlet>
   <footer class="mainFooter">
     <div>
       <h2>Knowledge Partner</h2>
-      <img src="../../assets/images/catalyst.png" alt="">
+      <img src="../../assets/images/catalyst.png" alt="" />
     </div>
   </footer>
 </div>

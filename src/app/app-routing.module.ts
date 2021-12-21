@@ -3,11 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ShellComponent } from './shell/shell.component';
 import { HomeComponent } from './home/home.component';
+import { AddScoresComponent } from './add-scores/add-scores.component';
+import { AuthGuardService as AuthGuard } from 'src/shared/services/auth-guard.service';
 const routes: Routes = [
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
   {
     path: '',
     component: ShellComponent,
@@ -17,7 +15,16 @@ const routes: Routes = [
         redirectTo: 'home',
         pathMatch: 'full',
       },
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
       { path: 'home', component: HomeComponent },
+      {
+        path: 'add-marks',
+        component: AddScoresComponent,
+        canActivate: [AuthGuard],
+      },
       { path: '**', redirectTo: '' },
     ],
   },

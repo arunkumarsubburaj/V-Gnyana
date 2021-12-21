@@ -1,0 +1,46 @@
+<div class="addBoContent">
+  <h2>Add Participant Details</h2>
+  <div>
+    <label>Select State</label>
+    <angular2-multiselect
+      text="Select State"
+      [data]="stateList"
+      [(ngModel)]="selectedState"
+      [settings]="stateDropdownSettings"
+      (onSelect)="onItemSelect($event, 'state')"
+    ></angular2-multiselect>
+  </div>
+  <div>
+    <label>Select Team</label>
+    <angular2-multiselect
+      text="Select Team"
+      [data]="teamList"
+      [(ngModel)]="selectedTeam"
+      [settings]="teamDropdownSettings"
+      (onSelect)="onItemSelect($event, 'team')"
+    ></angular2-multiselect>
+  </div>
+  <div class="teamDetails" *ngIf="showStudentData()">
+    <ul>
+      <li *ngFor="let student of studentsOnTeam">
+        {{ student.studentId + " - " + student.studentName }}
+      </li>
+    </ul>
+  </div>
+  <div>
+    <label>Level 2 Score</label>
+    <input
+      type="text"
+      name="level2Score"
+      id="level2Score"
+      pattern="[0-9]+"
+      title="Please enter Score"
+      placeholder="Please enter Score"
+      required
+      #level2Score
+    />
+  </div>
+  <div class="btnWrap">
+    <button class="formButton" (click)="updateMarks()">Submit</button>
+  </div>
+</div>
