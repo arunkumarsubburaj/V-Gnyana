@@ -24,6 +24,7 @@
     <ul>
       <li *ngFor="let student of studentsOnTeam">
         {{ student.studentId + " - " + student.studentName }}
+        {{ student.isBackupTeam ? "- (Backup Team)" : "" }}
       </li>
     </ul>
   </div>

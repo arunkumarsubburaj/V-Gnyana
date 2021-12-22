@@ -157,3 +157,16 @@ body {
     }
   }
 }
+.overlay-container {
+  .custom-center {
+    min-width: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 45px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}

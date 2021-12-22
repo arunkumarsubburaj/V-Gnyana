@@ -47,6 +47,10 @@ export class AddScoresComponent implements OnInit, AfterViewInit {
   @ViewChild('level2Score') level2Score!: ElementRef;
 
   ngAfterViewInit() {
+    this.getStudentList();
+  }
+  ngOnInit(): void {}
+  getStudentList() {
     this.userService.getStudents().subscribe(
       (res) => {
         this.studentData = res;
@@ -58,7 +62,6 @@ export class AddScoresComponent implements OnInit, AfterViewInit {
       }
     );
   }
-  ngOnInit(): void {}
   onItemSelect(item: any, selected: string) {
     switch (selected) {
       case 'team':
@@ -79,10 +82,12 @@ export class AddScoresComponent implements OnInit, AfterViewInit {
       switch (columnName) {
         case 'teamNumber':
           if (!this.isAlreadyAvailable(studentObj.teamNumber, returnArray)) {
-            returnArray.push({
-              value: studentObj.teamNumber,
-              viewValue: 'Team ' + studentObj.teamNumber,
-            });
+            if (studentObj.semiFinalsResult == null) {
+              returnArray.push({
+                value: studentObj.teamNumber,
+                viewValue: 'Team ' + studentObj.teamNumber,
+              });
+            }
           }
           break;
         case 'state':
@@ -145,6 +150,7 @@ export class AddScoresComponent implements OnInit, AfterViewInit {
           this.level2Score.nativeElement.value = null;
           this.selectedState.length = 0;
           this.selectedTeam.length = 0;
+          this.getStudentList();
         },
         (err) => {
           this.toastrService.error(err.message);
@@ -164,9 +170,11 @@ export class AddScoresComponent implements OnInit, AfterViewInit {
     return this.selectedState?.length > 0 && this.selectedTeam?.length > 0;
   }
   isValidate() {
-    const inputValue = +this.level2Score.nativeElement.value;
+    const inputValue = this.level2Score.nativeElement.value;
     return (
-      !isNaN(inputValue) &&
+      inputValue != '' &&
+      !isNaN(+inputValue) &&
+      +inputValue >= 0 &&
       this.selectedState?.length > 0 &&
       this.selectedTeam?.length > 0
     );

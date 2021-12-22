@@ -31,7 +31,11 @@ import { AddScoresComponent } from './add-scores/add-scores.component';
     BrowserAnimationsModule,
     SharedModule,
     HttpClientModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      preventDuplicates: true,
+      closeButton: true,
+      positionClass: 'custom-center',
+    }),
   ],
   exports: [HttpClientModule],
   providers: [
