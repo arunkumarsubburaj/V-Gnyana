@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/quizabled",
+            "outputPath": "dist/v-gnyana",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -104,5 +104,5 @@
       }
     }
   },
-  "defaultProject": "v-gnyana"
+  "defaultProject": "quizabled"
 }
