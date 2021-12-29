@@ -22,8 +22,8 @@ export class AddScoresComponent implements OnInit, AfterViewInit {
   ) {}
   stateList!: { viewValue: string; value: string }[];
   teamList!: { viewValue: string; value: string }[];
-  selectedState!: { viewValue: string; value: string }[];
-  selectedTeam!: { viewValue: string; value: string }[];
+  selectedState: { viewValue: string; value: string }[] = [];
+  selectedTeam: { viewValue: string; value: string }[] = [];
   studentData!: StudentObj[];
   studentsOnTeam!: StudentObj[];
   stateDropdownSettings: any = {
@@ -55,7 +55,7 @@ export class AddScoresComponent implements OnInit, AfterViewInit {
       (res) => {
         this.studentData = res;
         this.stateList = this.filteredArray('state');
-        this.teamList = this.filteredArray('teamNumber');
+        this.teamList = [];
       },
       (err) => {
         this.toastrService.error(err.message);
@@ -63,9 +63,13 @@ export class AddScoresComponent implements OnInit, AfterViewInit {
     );
   }
   onItemSelect(item: any, selected: string) {
+    const state = this.selectedState[0].value;
     switch (selected) {
+      case 'state':
+        this.selectedTeam.length = 0;
+        this.teamList = this.filteredArray('teamNumber', state);
+        break;
       case 'team':
-        const state = this.selectedState[0].value;
         const team = this.selectedTeam[0].value;
         this.studentsOnTeam = this.studentData.filter((studentObj) => {
           return studentObj.teamNumber == team && studentObj.state == state;
@@ -76,13 +80,16 @@ export class AddScoresComponent implements OnInit, AfterViewInit {
         break;
     }
   }
-  filteredArray(columnName: string) {
+  filteredArray(columnName: string, state?: string) {
     let returnArray: any = [];
     this.studentData.forEach((studentObj) => {
       switch (columnName) {
         case 'teamNumber':
           if (!this.isAlreadyAvailable(studentObj.teamNumber, returnArray)) {
-            if (studentObj.semiFinalsResult == null) {
+            if (
+              studentObj.semiFinalsResult == null &&
+              studentObj.state == state
+            ) {
               returnArray.push({
                 value: studentObj.teamNumber,
                 viewValue: 'Team ' + studentObj.teamNumber,
@@ -103,6 +110,27 @@ export class AddScoresComponent implements OnInit, AfterViewInit {
           break;
       }
     });
+    if (columnName == 'state') {
+      returnArray = returnArray.sort(
+        (
+          item1: { value: string; viewValue: string },
+          item2: { value: string; viewValue: string }
+        ) => {
+          if (item1.value < item2.value) return -1;
+          if (item1.value > item2.value) return 1;
+          return 0;
+        }
+      );
+    } else {
+      returnArray = returnArray.sort(
+        (
+          item1: { value: string; viewValue: string },
+          item2: { value: string; viewValue: string }
+        ) => {
+          return +item1.value - +item2.value;
+        }
+      );
+    }
     return returnArray;
   }
   getStateString(stateKey: string) {
