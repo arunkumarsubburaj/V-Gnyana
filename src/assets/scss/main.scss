@@ -1,0 +1,51 @@
+@import "header";
+@import "menu";
+@import "footer";
+
+:root {
+  font-size: 8px;
+  @media (min-width: 768px) {
+    font-size: 9px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 10px;
+  }
+  @media (min-width: 1600px) {
+    font-size: 11px;
+  }
+}
+body {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 3.6rem;
+  line-height: 1.4;
+  margin-bottom: 1em;
+}
+h2 {
+  font-size: 3.2rem;
+  line-height: 1.4;
+  margin-bottom: 1em;
+}
+
+.lineHeading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007ec8;
+  font-weight: 700;
+  span {
+    background-image: linear-gradient(to right, orange, transparent);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: auto 2px;
+  }
+}
+
+.centerWrap {
+  padding: 0 20px;
+  @media (min-width: 1366px) {
+    padding: 0 calc((100vw - 1200px) / 2);
+  }
+}

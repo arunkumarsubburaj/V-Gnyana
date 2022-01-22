@@ -1,8 +1,86 @@
 .banner {
-  height: 50vh;
-  background-image: url(../../assets/images/vs.png),
-    url(../../assets/images/banner.jpg);
+  position: relative;
+  height: 225px;
+  background-image: url(../../assets/images/banner1.jpg);
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: auto 105%, cover;
+  background-size: cover;
+  margin-bottom: 50px;
+  @media (min-width: 768px) {
+    height: 400px;
+  }
+}
+
+.countdown {
+  position: absolute;
+  top: 50%;
+  left: 10vw;
+  transform: translateY(-50%) scale(0.5);
+  transform-origin: 0 50%;
+  width: 268px;
+  height: 236px;
+  background: url(../../assets/images/countdown.png);
+  @media (min-width: 768px) {
+    transform: translateY(-50%) scale(1);
+  }
+}
+.countdown-days {
+  font-size: 140px;
+  font-weight: 700;
+  color: #fff;
+  position: absolute;
+  bottom: 62px;
+  right: 37px;
+  text-shadow: 3px 3px rgb(0 0 0 / 22%);
+  width: 161px;
+  line-height: 0.75;
+  text-align: center;
+}
+
+.homeContentRow {
+  margin-bottom: 40px;
+  display: flex;
+
+  figure {
+    padding: 6px;
+    background-image: linear-gradient(-45deg, #8bb82d, #0cb8a9);
+    box-shadow: 5px 5px 8px rgb(0, 0, 0, 0.25);
+  }
+  img {
+    width: 100%;
+    display: block;
+    border: 1px solid #fff;
+  }
+  p {
+    font-size: 2.2rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    aside {
+      order: -1;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    aside {
+      flex: 0 0 50%;
+    }
+    figure {
+      flex: 0 0 40%;
+      max-width: 40%;
+      margin: 0 5%;
+    }
+  }
+}
+
+.bgEvents {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #ececec;
 }

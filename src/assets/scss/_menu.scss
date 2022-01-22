@@ -1,0 +1,55 @@
+.mainNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  > * {
+    display: inline-flex;
+    align-items: center;
+    color: #121212;
+    transition: 0.12s;
+    i {
+      transition: 0.12s;
+    }
+    span {
+      font-weight: 500;
+    }
+    &:hover:not(.active) {
+      color: #000;
+      i {
+        transform: translateY(-10px);
+      }
+    }
+    &.active {
+      color: #2691d0;
+      i {
+        color: #ffb300;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    > * {
+      margin: 0 1%;
+      flex: 0 0 23%;
+      flex-direction: column;
+      i {
+        font-size: 24px;
+      }
+      span {
+        font-size: 14px;
+        margin-top: 8px;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    > * {
+      margin: 0 40px;
+      i {
+        font-size: 36px;
+      }
+      span {
+        font-size: 20px;
+        margin-left: 12px;
+      }
+    }
+  }
+}
