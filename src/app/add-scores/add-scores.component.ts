@@ -145,6 +145,12 @@ export class AddScoresComponent implements OnInit, AfterViewInit {
       case 'UT':
         returnString = 'Uttarakhand';
         break;
+      case 'MH':
+        returnString = 'Maharashtra';
+        break;
+      case 'JH':
+        returnString = 'Jharkhand';
+        break;
     }
     return returnString;
   }
