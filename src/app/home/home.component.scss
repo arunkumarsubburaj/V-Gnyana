@@ -9,6 +9,9 @@
   @media (min-width: 768px) {
     height: 400px;
   }
+  @media (min-width: 1200px) {
+    height: 480px;
+  }
 }
 
 .countdown {
@@ -22,6 +25,9 @@
   background: url(../../assets/images/countdown.png);
   @media (min-width: 768px) {
     transform: translateY(-50%) scale(1);
+  }
+  @media (min-width: 1200px) {
+    left: calc((100vw - 1100px) / 2);
   }
 }
 .countdown-days {

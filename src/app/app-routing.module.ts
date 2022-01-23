@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ShellComponent } from './shell/shell.component';
 import { HomeComponent } from './home/home.component';
+import { ResultsComponent } from './results/results.component';
 import { AddScoresComponent } from './add-scores/add-scores.component';
 import { AuthGuardService as AuthGuard } from 'src/shared/services/auth-guard.service';
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
         component: LoginComponent,
       },
       { path: 'home', component: HomeComponent },
+      { path: 'results', component: ResultsComponent },
       {
         path: 'add-marks',
         component: AddScoresComponent,

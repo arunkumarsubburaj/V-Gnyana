@@ -1,0 +1,135 @@
+.lbTable {
+  @media (max-width: 767px) {
+    margin: 0 -20px;
+  }
+}
+.lbTable-row {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  > * {
+    font-size: 1.6rem;
+    padding: 0 10px;
+    @media (max-width: 767px) {
+      font-size: 1.4rem;
+      padding: 0 4px;
+    }
+  }
+}
+.lbTable-header {
+  color: #fff;
+  background: linear-gradient(to bottom, #848484, #676767);
+  > * {
+    font-weight: 500;
+    padding: 6px 10px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    @media (max-width: 767px) {
+      padding: 6px 4px;
+    }
+  }
+}
+.lbTable-list {
+  margin-bottom: 1px;
+  color: #333;
+  background: linear-gradient(to bottom, #f6f6f6, #eeeeee);
+}
+.quizSuccess {
+  animation: bgHighlight 2.4s ease-out both;
+}
+.lbTable-row.first {
+  color: #fff;
+  background: #e66c13;
+}
+.rankcol {
+  flex: 0 0 10%;
+  text-align: center;
+  @media (max-width: 767px) {
+    flex: 0 0 40px;
+  }
+}
+.statecol {
+  flex: 0 0 30%;
+  @media (max-width: 767px) {
+    flex: 0 0 100px;
+  }
+}
+.schoolcol {
+  flex: 0 0 40%;
+  @media (max-width: 767px) {
+    flex: 1 0 auto;
+  }
+}
+.pointscol {
+  position: relative;
+  flex: 0 0 20%;
+  text-align: center;
+  @media (max-width: 767px) {
+    flex: 0 0 100px;
+  }
+}
+
+.gridStatus {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 767px) {
+    right: 10px;
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+
+  &.gained {
+    background: rgb(84, 202, 5);
+    &:before {
+      content: "\f176";
+    }
+  }
+  &.losed {
+    background: rgb(252, 55, 55);
+    &:before {
+      content: "\f175";
+    }
+  }
+  &.noChange:before {
+    content: "\e908";
+    font-size: 60%;
+  }
+}
+
+@keyframes bgHighlight {
+  0%,
+  20%,
+  40%,
+  60% {
+    background: rgba(84, 202, 5, 1);
+  }
+  10%,
+  30%,
+  50%,
+  100% {
+    background: rgba(84, 202, 5, 0);
+  }
+}
