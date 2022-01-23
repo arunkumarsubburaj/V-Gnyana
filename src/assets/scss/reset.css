@@ -50,7 +50,18 @@ ul {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-home:before {
+  content: "\e909";
+}
+.icon-long-arrow-down:before {
+  content: "\f175";
+}
+.icon-long-arrow-up:before {
+  content: "\f176";
+}
+.icon-equal:before {
+  content: "\e908";
+}
 .icon-arrow-right:before {
   content: "\e900";
 }

@@ -14,6 +14,9 @@
   @media (min-width: 1600px) {
     font-size: 11px;
   }
+
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #eee;
 }
 body {
   font-size: 16px;
@@ -49,4 +52,35 @@ h2 {
   @media (min-width: 1366px) {
     padding: 0 calc((100vw - 1200px) / 2);
   }
+}
+
+.banner {
+  position: relative;
+  height: 225px;
+  margin-bottom: 50px;
+  @media (min-width: 768px) {
+    height: 400px;
+  }
+  @media (min-width: 1200px) {
+    height: 480px;
+  }
+}
+
+.swiper-slide {
+  background: transparent;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  @media (max-width: 767px) {
+    opacity: 0.2;
+  }
+}
+
+.mainWrap {
+  background-image: linear-gradient(to bottom, #fff 60%, transparent),
+    url("../images/bottom-bg.jpg");
+  background-size: 100%, cover;
+  background-repeat: repeat, no-repeat;
+  background-position: 0 0, bottom center;
+  overflow: hidden;
 }

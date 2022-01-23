@@ -1,4 +1,69 @@
 #carouselWrapper {
   width: 100%;
-  height: 400px;
+  height: 100%;
+}
+
+.banner {
+  background-image: url(../../assets/images/banner.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .centerWrap {
+    height: 100%;
+    flex: 0 0 100%;
+
+    @media (max-width: 1365px) {
+      padding: 0 50px;
+    }
+    @media (max-width: 767px) {
+      padding: 0 36px;
+    }
+  }
+}
+
+.bannerContent {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  @media (max-width: 767px) {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .year {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  figure {
+    flex: 0 0 40%;
+    max-height: 70%;
+    margin: 0 3% 5%;
+    border: 2px solid #fff;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    @media (max-width: 767px) {
+      flex: 0 0 48%;
+      max-height: 70%;
+      margin: 0 1% 5%;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.aboutContent {
+  p {
+    font-size: 2.2rem;
+    line-height: 1.6;
+    margin-bottom: 1em;
+  }
 }
