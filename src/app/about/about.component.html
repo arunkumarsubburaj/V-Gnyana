@@ -1,9 +1,32 @@
-<div id="aboutContainer">
+<div class="banner">
   <div id="carouselWrapper">
     <swiper class="mySwiper" [config]="config">
-      <ng-template swiperSlide>Slide 1</ng-template>
-      <ng-template swiperSlide>Slide 2</ng-template>
-      <ng-template swiperSlide>Slide 3</ng-template>
+      <ng-template swiperSlide>
+        <div class="centerWrap">
+          <div class="bannerContent">
+            <figure><img src="../../assets/images/home1.jpg" alt=""></figure>
+            <figure><img src="../../assets/images/home2.jpg" alt=""></figure>
+            <div class="year">2021</div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div class="centerWrap">
+          <div class="bannerContent">
+            <figure><img src="../../assets/images/home1.jpg" alt=""></figure>
+            <figure><img src="../../assets/images/home2.jpg" alt=""></figure>
+            <div class="year">2021</div>
+          </div>
+        </div>
+      </ng-template>
     </swiper>
   </div>
+</div>
+<div class="centerWrap aboutContent">
+  <p>V-Gnyana, co-created with LTI an virtual quizzing event with the intent of creating exposure to the concept of the
+    competitive quiz, thereby inspiring students across Rural India to broaden their knowledge levels beyond the school
+    curriculum. This quiz format enables the students to increase their general knowledge and awareness of current affairs alongside building a healthy competitive spirit.</p>
+  <p>Over 5000+ students participated in the last 2 years, from rural government schools across Maharashtra, Karnataka, Tamil Nadu, Andhra Pradesh and Telangana.</p>
+  <p>We were able to successfully pilot our first edition in 2020 through a mix of rounds (online, offline and live event). The finale was held on the LTI Campus in Bangalore. Due to COVID-19 Pandemic, we conducted V-Gnyana 2021 completely through virtual mode.</p>
+  <p>The second edition was a combination of online + offline to reach more children.</p>
 </div>
