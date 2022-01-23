@@ -1,6 +1,8 @@
 .lbTable {
+  margin-bottom: 50px;
   @media (max-width: 767px) {
-    margin: 0 -20px;
+    margin-left: -20px;
+    margin-right: -20px;
   }
 }
 .lbTable-row {
@@ -131,5 +133,116 @@
   50%,
   100% {
     background: rgba(84, 202, 5, 0);
+  }
+}
+
+.participation {
+  margin-bottom: 50px;
+  font-size: 1.4rem;
+  @media (min-width: 768px) {
+    font-size: 1.6rem;
+  }
+
+  table {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+
+    td,
+    th {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    td:not(:first-child) {
+      text-align: center;
+    }
+  }
+}
+
+.batchRow {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-evenly;
+  padding: 20px 0;
+  .teamCol {
+    flex: 0 0 auto;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    img {
+      display: inline-block;
+      max-width: 50px;
+      @media (min-width: 600px) {
+        max-width: 70px;
+      }
+      @media (min-width: 768px) {
+        max-width: 80px;
+      }
+      @media (min-width: 1024px) {
+        max-width: 100px;
+      }
+    }
+  }
+  p {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  .winnerCol {
+    flex: 0 0 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-size: 1.6rem;
+    border-top: 1px dashed #ccc;
+    padding-top: 20px;
+    aside {
+      flex: 0 0 40%;
+      padding-right: 5%;
+    }
+    section {
+      flex: 1 0 60%;
+      display: flex;
+      align-items: center;
+      @media (max-width: 500px) {
+        flex-direction: column;
+        .winnerDetails {
+          width: 100%;
+        }
+      }
+    }
+    img {
+      max-height: 150px;
+      @media (max-width: 500px) {
+        max-height: 100px;
+        margin-bottom: 20px;
+      }
+    }
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: initial;
+      aside {
+        padding-right: 0;
+      }
+      aside,
+      section {
+        flex: 0 0 auto;
+      }
+    }
+  }
+}
+.winnerDetails {
+  > div {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+  i {
+    flex: 0 0 10.2rem;
   }
 }
