@@ -8,4 +8,7 @@ export class CoreConstants {
   public static get logout(): string {
     return '/logout';
   }
+  public static get finalsDate(): string {
+    return '02/01/2022';
+  }
 }

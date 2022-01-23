@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { ResultsComponent } from './results/results.component';
 import { AddScoresComponent } from './add-scores/add-scores.component';
 import { AuthGuardService as AuthGuard } from 'src/shared/services/auth-guard.service';
+import { AboutComponent } from './about/about.component';
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +22,7 @@ const routes: Routes = [
         component: LoginComponent,
       },
       { path: 'home', component: HomeComponent },
+      { path: 'about', component: AboutComponent },
       { path: 'results', component: ResultsComponent },
       {
         path: 'add-marks',

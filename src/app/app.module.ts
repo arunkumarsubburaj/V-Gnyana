@@ -15,6 +15,7 @@ import { AuthService } from 'src/shared/services/auth.service';
 import { LoaderComponent } from './loader/loader.component';
 import { HomeComponent } from './home/home.component';
 import { AddScoresComponent } from './add-scores/add-scores.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AddScoresComponent } from './add-scores/add-scores.component';
     LoaderComponent,
     HomeComponent,
     AddScoresComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,19 +1,45 @@
-<div class="banner">
-<div class="countdown">
-  <div class="countdown-days">4</div>
+<div class="banner" *ngIf="daysRemaining != 0">
+  <div class="countdown">
+    <div class="countdown-days">{{ daysRemaining }}</div>
+  </div>
 </div>
+<div id="carouselWrapper" *ngIf="daysRemaining == 0">
+  <swiper class="mySwiper" [config]="config">
+    <ng-template swiperSlide>Slide 1</ng-template>
+    <ng-template swiperSlide>Slide 2</ng-template>
+    <ng-template swiperSlide>Slide 3</ng-template>
+  </swiper>
 </div>
 <div class="centerWrap">
-  <h1 class="lineHeading"><span>V-GNYANA - THIRD EDITION OF VIRTUAL QUIZ</span></h1>
+  <h1 class="lineHeading">
+    <span>V-GNYANA - THIRD EDITION OF VIRTUAL QUIZ</span>
+  </h1>
   <div class="homeContentRow">
-    <aside><p>With the immense support and encouragement from LTI, the virtual quizzing event is conducted in 3 rounds covering a breadth of topics - About India, Current Affairs, Health & Hygiene, and Sports across 146 schools from 8 States (Andhra Pradesh, Jharkhand, Maharashtra, Karnataka, Tamil Nadu, Uttar Pradesh, Uttarakhand, and Telangana ) reaching 3000+ students in teams of 3 students.</p></aside>
-    <figure><img src="../../assets/images/home1.jpg" alt=""></figure>
+    <aside>
+      <p>
+        With the immense support and encouragement from LTI, the virtual
+        quizzing event is conducted in 3 rounds covering a breadth of topics -
+        About India, Current Affairs, Health & Hygiene, and Sports across 146
+        schools from 8 States (Andhra Pradesh, Jharkhand, Maharashtra,
+        Karnataka, Tamil Nadu, Uttar Pradesh, Uttarakhand, and Telangana )
+        reaching 3000+ students in teams of 3 students.
+      </p>
+    </aside>
+    <figure><img src="../../assets/images/home1.jpg" alt="" /></figure>
   </div>
   <div class="homeContentRow">
-    <figure><img src="../../assets/images/home2.jpg" alt=""></figure>
+    <figure><img src="../../assets/images/home2.jpg" alt="" /></figure>
     <aside>
-      <p>Along with LTI Volunteer’s as pillars of this event, this year we are engaging 50+ volunteers to conduct the semi finals for the students in round-2.</p>
-      <p>The Finale will be conducted in the second half of Jan, where the Quiz Masters from Quiz Catalyst will host the competitive and interactive Quiz for the toppers from each state.</p>
+      <p>
+        Along with LTI Volunteer’s as pillars of this event, this year we are
+        engaging 50+ volunteers to conduct the semi finals for the students in
+        round-2.
+      </p>
+      <p>
+        The Finale will be conducted in the second half of Jan, where the Quiz
+        Masters from Quiz Catalyst will host the competitive and interactive
+        Quiz for the toppers from each state.
+      </p>
     </aside>
   </div>
 </div>
@@ -26,18 +52,27 @@
     </li>
     <li>
       <strong>Round 2</strong>
-      <span>Semi Finals -Online  Live Quiz to be conducted by LTI volunteers</span>
+      <span
+        >Semi Finals -Online Live Quiz to be conducted by LTI volunteers</span
+      >
     </li>
     <li>
       <strong>Round 3</strong>
-      <span>Finals - Online Live quiz to be conducted by external Quizmasters. The Top scoring team from every state enters the national final. A total of 8 teams in finals representing each state.</span>
+      <span
+        >Finals - Online Live quiz to be conducted by external Quizmasters. The
+        Top scoring team from every state enters the national final. A total of
+        8 teams in finals representing each state.</span
+      >
     </li>
   </ul>
   <h2 class="lineHeading"><span>Prizes</span></h2>
   <ul class="homeList">
     <li>
       <strong>Winners</strong>
-      <span>A winner, a runner-up, and the team with outstanding performance to receive cash prize, trophy, medal, and certificate</span>
+      <span
+        >A winner, a runner-up, and the team with outstanding performance to
+        receive cash prize, trophy, medal, and certificate</span
+      >
     </li>
     <li>
       <strong>Participants</strong>
