@@ -1,14 +1,74 @@
-<div class="banner" *ngIf="daysRemaining != 0">
+<div class="banner days" *ngIf="daysRemaining == 0">
   <div class="countdown">
     <div class="countdown-days">{{ daysRemaining }}</div>
   </div>
 </div>
-<div id="carouselWrapper" *ngIf="daysRemaining == 0">
+<div class="banner" *ngIf="daysRemaining != 0">
+<div id="carouselWrapper">
   <swiper class="mySwiper" [config]="config">
-    <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 2</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
+    <ng-template swiperSlide>
+      <div class="centerWrap">
+        <div class="homeCarouselContent">
+          <div>
+            <h4>Tamilnadu</h4>
+            <ul>
+              <li><strong>30</strong> Schools</li>
+              <li><strong>339</strong> Students</li>
+              <li><strong>113</strong> Teams</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Uttarakhand</h4>
+            <ul>
+              <li><strong>5</strong> Schools</li>
+              <li><strong>96</strong> Students</li>
+              <li><strong>32</strong> Teams</li>
+            </ul>
+          </div>
+        </div>
+        <a [routerLink]="['/results']" class="viewBtn">View Results</a>
+      </div>
+    </ng-template>
+    <ng-template swiperSlide>
+      <div class="centerWrap">
+        <div class="homeCarouselContent">
+          <div>
+            <h4>Karnataka</h4>
+            <ul>
+              <li><strong>46</strong> Schools</li>
+              <li><strong>1009</strong> Students</li>
+              <li><strong>338</strong> Teams</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Maharashtra</h4>
+            <ul>
+              <li><strong>28</strong> Schools</li>
+              <li><strong>411</strong> Students</li>
+              <li><strong>136</strong> Teams</li>
+            </ul>
+          </div>
+        </div>
+        <a [routerLink]="['/results']" class="viewBtn">View Results</a>
+      </div>
+    </ng-template>
+    <ng-template swiperSlide>
+      <div class="centerWrap">
+        <div class="homeCarouselContent">
+          <div>
+            <h4>Jharkhand</h4>
+            <ul>
+              <li><strong>6</strong> Schools</li>
+              <li><strong>162</strong> Students</li>
+              <li><strong>55</strong> Teams</li>
+            </ul>
+          </div>
+        </div>
+        <a [routerLink]="['/results']" class="viewBtn">View Results</a>
+      </div>
+    </ng-template>
   </swiper>
+</div>
 </div>
 <div class="centerWrap">
   <h1 class="lineHeading">
