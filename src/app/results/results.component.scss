@@ -145,20 +145,29 @@
 
   table {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     border-spacing: 0;
     border-collapse: collapse;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
 
     td,
     th {
-      padding: 10px;
-      border: 1px solid #ccc;
+      padding: 15px;
+      // border: 1px solid #ccc;
+    }
+    td {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    th {
+      font-size: 14px;
+      font-weight: 500;
     }
 
     td:not(:first-child) {
-      text-align: center;
+      font-family: "Alfa Slab One", cursive;
     }
   }
 }
@@ -217,7 +226,7 @@
       }
     }
     img {
-      max-height: 150px;
+      max-height: 120px;
       @media (max-width: 500px) {
         max-height: 100px;
         margin-bottom: 20px;
@@ -237,6 +246,9 @@
   }
 }
 .winnerDetails {
+  @media (min-width: 500px) {
+    padding-top: 15px;
+  }
   > div {
     display: flex;
     align-items: flex-start;

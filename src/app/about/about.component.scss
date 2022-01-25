@@ -14,15 +14,22 @@
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 4rem;
+    font-size: 2rem;
     color: #fff;
     font-weight: 700;
+    white-space: nowrap;
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+    @media (min-width: 1200px) {
+      font-size: 4rem;
+    }
   }
 
   figure {
-    flex: 0 0 40%;
-    max-height: 70%;
-    margin: 0 3% 5%;
+    flex: 0 0 44%;
+    max-height: 80%;
+    margin: 0 2% 4%;
     border: 2px solid #fff;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     @media (max-width: 767px) {
