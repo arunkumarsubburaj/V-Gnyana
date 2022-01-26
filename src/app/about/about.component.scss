@@ -51,3 +51,86 @@
     margin-bottom: 1em;
   }
 }
+
+.journey {
+  display: flex;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5rem;
+    left: 15%;
+    right: 15%;
+    height: 3px;
+    background-image: linear-gradient(to right, chocolate 50%, transparent 50%);
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    background-size: 10px;
+  }
+  > div {
+    flex: 0 0 33%;
+    text-align: center;
+  }
+}
+.journey-year {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: #303480;
+  color: #fff;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  .numFont {
+    font-size: 2.2rem;
+  }
+  sup {
+    display: inline-block;
+    transform: translateY(-10px);
+    padding-left: 5px;
+    font-size: 14px;
+  }
+}
+
+.journey-details {
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+    color: #e97c2c;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      margin-bottom: 3rem;
+    }
+    img {
+      margin-right: 20px;
+      @media (max-width: 767px) {
+        max-width: 60px;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+    .numFont {
+      font-size: 2.4rem;
+    }
+  }
+}
+.numFont {
+  font-family: "Alfa Slab One", cursive;
+}
+.journeyTitle {
+  margin: 5rem 0;
+  text-align: center;
+  font-size: 2.2rem;
+  span {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e97c2c;
+    color: #fff;
+    border-radius: 5px;
+  }
+}
