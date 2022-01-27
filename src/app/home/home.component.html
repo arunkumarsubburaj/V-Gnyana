@@ -1,16 +1,16 @@
-<div class="banner days" *ngIf="daysRemaining != 0">
+<div class="banner days" *ngIf="daysRemaining == 0">
   <div class="countdown">
     <div class="countdown-days">{{ daysRemaining }}</div>
   </div>
 </div>
-<div class="banner" *ngIf="daysRemaining == 0">
+<div class="banner" *ngIf="daysRemaining != 0">
   <div id="carouselWrapper">
     <swiper class="mySwiper" [config]="config">
       <ng-template swiperSlide>
         <div class="centerWrap">
           <div class="homeCarouselContent">
             <div>
-              <h4>Tamilnadu</h4>
+              <h4 class="tnMap">Tamilnadu</h4>
               <ul>
                 <li><strong>30</strong> Schools</li>
                 <li><strong>339</strong> Students</li>
@@ -18,7 +18,7 @@
               </ul>
             </div>
             <div>
-              <h4>Uttarakhand</h4>
+              <h4 class="ukMap">Uttarakhand</h4>
               <ul>
                 <li><strong>5</strong> Schools</li>
                 <li><strong>96</strong> Students</li>
@@ -33,7 +33,7 @@
         <div class="centerWrap">
           <div class="homeCarouselContent">
             <div>
-              <h4>Karnataka</h4>
+              <h4 class="knMap">Karnataka</h4>
               <ul>
                 <li><strong>46</strong> Schools</li>
                 <li><strong>1009</strong> Students</li>
@@ -41,7 +41,7 @@
               </ul>
             </div>
             <div>
-              <h4>Maharashtra</h4>
+              <h4 class="mhMap">Maharashtra</h4>
               <ul>
                 <li><strong>28</strong> Schools</li>
                 <li><strong>411</strong> Students</li>
@@ -56,7 +56,7 @@
         <div class="centerWrap">
           <div class="homeCarouselContent">
             <div>
-              <h4>Jharkhand</h4>
+              <h4 class="jhMap">Jharkhand</h4>
               <ul>
                 <li><strong>6</strong> Schools</li>
                 <li><strong>162</strong> Students</li>

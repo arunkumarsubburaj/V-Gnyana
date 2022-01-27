@@ -5,8 +5,8 @@
   justify-content: center;
   position: relative;
   @media (max-width: 767px) {
-    max-width: 420px;
     margin: 0 auto;
+    flex-direction: column;
   }
 
   .year {
@@ -27,15 +27,16 @@
   }
 
   figure {
-    flex: 0 0 44%;
-    max-height: 80%;
-    margin: 0 2% 4%;
     border: 2px solid #fff;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    @media (min-width: 768px) {
+      flex: 0 0 44%;
+      max-height: 80%;
+      margin: 0 2% 4%;
+    }
     @media (max-width: 767px) {
-      flex: 0 0 48%;
-      max-height: 70%;
-      margin: 0 1% 5%;
+      max-height: 35%;
+      margin: 5px 0;
     }
 
     img {

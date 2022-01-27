@@ -106,7 +106,7 @@
 .homeCarouselContent {
   display: flex;
   justify-content: center;
-  padding-top: 5%;
+  padding-top: 30px;
   color: #fff;
   text-align: center;
   > div {
@@ -114,26 +114,57 @@
     margin: 0 2%;
   }
   h4 {
-    display: inline-block;
-    padding: 10px 1em;
-    margin-bottom: 1.2em;
-    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 100px;
+    min-width: 100px;
+    padding: 120px 0 0;
+    margin-top: -20px;
+    margin-bottom: 20px;
     font-weight: 500;
     font-size: 2rem;
-    background: linear-gradient(to bottom, #3a3a3a, #000);
+    background: url("../../assets/images/state-tn.png") no-repeat center center;
     text-transform: uppercase;
+    border-bottom: 2px dashed #fff;
     @media (min-width: 768px) {
       font-size: 2.4rem;
-      margin-bottom: 1.5em;
+      margin-bottom: 16px;
+    }
+    &.ukMap {
+      background-image: url("../../assets/images/state-uk.png");
+    }
+    &.knMap {
+      background-image: url("../../assets/images/state-kn.png");
+    }
+    &.mhMap {
+      background-image: url("../../assets/images/state-mh.png");
+    }
+    &.jhMap {
+      background-image: url("../../assets/images/state-jh.png");
     }
   }
 
   li {
-    margin-bottom: 0.8em;
+    margin-bottom: 16px;
     font-size: 1.8rem;
     @media (min-width: 768px) {
       font-size: 2.2rem;
-      margin-bottom: 1.2;
+      margin-bottom: 20px;
+    }
+    @media (min-width: 1024px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      strong {
+        margin-right: 16px;
+      }
+    }
+    strong {
+      font-family: "Alfa Slab One", cursive;
+      display: block;
+      text-align: center;
+      letter-spacing: 2px;
+      font-size: 120%;
     }
   }
 }
@@ -146,6 +177,6 @@
   border-radius: 3px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.12);
   @media (min-width: 768px) {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
