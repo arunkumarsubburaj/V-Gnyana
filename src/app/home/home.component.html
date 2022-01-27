@@ -1,74 +1,74 @@
-<div class="banner days" *ngIf="daysRemaining == 0">
+<div class="banner days" *ngIf="daysRemaining != 0">
   <div class="countdown">
     <div class="countdown-days">{{ daysRemaining }}</div>
   </div>
 </div>
-<div class="banner" *ngIf="daysRemaining != 0">
-<div id="carouselWrapper">
-  <swiper class="mySwiper" [config]="config">
-    <ng-template swiperSlide>
-      <div class="centerWrap">
-        <div class="homeCarouselContent">
-          <div>
-            <h4>Tamilnadu</h4>
-            <ul>
-              <li><strong>30</strong> Schools</li>
-              <li><strong>339</strong> Students</li>
-              <li><strong>113</strong> Teams</li>
-            </ul>
+<div class="banner" *ngIf="daysRemaining == 0">
+  <div id="carouselWrapper">
+    <swiper class="mySwiper" [config]="config">
+      <ng-template swiperSlide>
+        <div class="centerWrap">
+          <div class="homeCarouselContent">
+            <div>
+              <h4>Tamilnadu</h4>
+              <ul>
+                <li><strong>30</strong> Schools</li>
+                <li><strong>339</strong> Students</li>
+                <li><strong>113</strong> Teams</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Uttarakhand</h4>
+              <ul>
+                <li><strong>5</strong> Schools</li>
+                <li><strong>96</strong> Students</li>
+                <li><strong>32</strong> Teams</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h4>Uttarakhand</h4>
-            <ul>
-              <li><strong>5</strong> Schools</li>
-              <li><strong>96</strong> Students</li>
-              <li><strong>32</strong> Teams</li>
-            </ul>
-          </div>
+          <a [routerLink]="['/results']" class="viewBtn">View Results</a>
         </div>
-        <a [routerLink]="['/results']" class="viewBtn">View Results</a>
-      </div>
-    </ng-template>
-    <ng-template swiperSlide>
-      <div class="centerWrap">
-        <div class="homeCarouselContent">
-          <div>
-            <h4>Karnataka</h4>
-            <ul>
-              <li><strong>46</strong> Schools</li>
-              <li><strong>1009</strong> Students</li>
-              <li><strong>338</strong> Teams</li>
-            </ul>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div class="centerWrap">
+          <div class="homeCarouselContent">
+            <div>
+              <h4>Karnataka</h4>
+              <ul>
+                <li><strong>46</strong> Schools</li>
+                <li><strong>1009</strong> Students</li>
+                <li><strong>338</strong> Teams</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Maharashtra</h4>
+              <ul>
+                <li><strong>28</strong> Schools</li>
+                <li><strong>411</strong> Students</li>
+                <li><strong>136</strong> Teams</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h4>Maharashtra</h4>
-            <ul>
-              <li><strong>28</strong> Schools</li>
-              <li><strong>411</strong> Students</li>
-              <li><strong>136</strong> Teams</li>
-            </ul>
-          </div>
+          <a [routerLink]="['/results']" class="viewBtn">View Results</a>
         </div>
-        <a [routerLink]="['/results']" class="viewBtn">View Results</a>
-      </div>
-    </ng-template>
-    <ng-template swiperSlide>
-      <div class="centerWrap">
-        <div class="homeCarouselContent">
-          <div>
-            <h4>Jharkhand</h4>
-            <ul>
-              <li><strong>6</strong> Schools</li>
-              <li><strong>162</strong> Students</li>
-              <li><strong>55</strong> Teams</li>
-            </ul>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div class="centerWrap">
+          <div class="homeCarouselContent">
+            <div>
+              <h4>Jharkhand</h4>
+              <ul>
+                <li><strong>6</strong> Schools</li>
+                <li><strong>162</strong> Students</li>
+                <li><strong>55</strong> Teams</li>
+              </ul>
+            </div>
           </div>
+          <a [routerLink]="['/results']" class="viewBtn">View Results</a>
         </div>
-        <a [routerLink]="['/results']" class="viewBtn">View Results</a>
-      </div>
-    </ng-template>
-  </swiper>
-</div>
+      </ng-template>
+    </swiper>
+  </div>
 </div>
 <div class="centerWrap">
   <h1 class="lineHeading">
@@ -105,21 +105,27 @@
 </div>
 <div class="centerWrap bgEvents">
   <h2 class="lineHeading"><span>Event Flow</span></h2>
-  <ul class="homeList" style="margin-bottom: 50px;">
+  <ul class="homeList" style="margin-bottom: 50px">
     <li>
       <strong class="listLabel">Round 1</strong>
-      <span><strong>Preliminary Round</strong> - Written-test facilitated by Field Teams</span>
+      <span
+        ><strong>Preliminary Round</strong> - Written-test facilitated by Field
+        Teams</span
+      >
     </li>
     <li>
       <strong class="listLabel">Round 2</strong>
-      <span><strong>Semi Finals</strong> - Online Live Quiz to be conducted by LTI volunteers</span
+      <span
+        ><strong>Semi Finals</strong> - Online Live Quiz to be conducted by LTI
+        volunteers</span
       >
     </li>
     <li>
       <strong class="listLabel">Round 3</strong>
-      <span><strong>Finals</strong> - Online Live quiz to be conducted by external Quizmasters. The
-        Top scoring team from every state enters the national final. A total of
-        8 teams in finals representing each state.</span
+      <span
+        ><strong>Finals</strong> - Online Live quiz to be conducted by external
+        Quizmasters. The Top scoring team from every state enters the national
+        final. A total of 8 teams in finals representing each state.</span
       >
     </li>
   </ul>
@@ -127,8 +133,10 @@
   <ul class="homeList">
     <li>
       <strong class="listLabel">Winners</strong>
-      <span>A winner, a runner-up, and the team with outstanding performance to
-        receive cash prize, trophy, medal, and certificate</span>
+      <span
+        >A winner, a runner-up, and the team with outstanding performance to
+        receive cash prize, trophy, medal, and certificate</span
+      >
     </li>
     <li>
       <strong class="listLabel">Participants</strong>
