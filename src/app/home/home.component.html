@@ -1,9 +1,9 @@
-<div class="banner days" *ngIf="daysRemaining == 0">
+<div class="banner days" *ngIf="daysRemaining != 0">
   <div class="countdown">
     <div class="countdown-days">{{ daysRemaining }}</div>
   </div>
 </div>
-<div class="banner" *ngIf="daysRemaining != 0">
+<div class="banner" *ngIf="daysRemaining == 0">
   <div id="carouselWrapper">
     <swiper class="mySwiper" [config]="config">
       <ng-template swiperSlide>
