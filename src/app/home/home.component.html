@@ -1,9 +1,9 @@
-<div class="banner days" *ngIf="daysRemaining != 0">
+<div class="banner days" *ngIf="daysRemaining == 0">
   <div class="countdown">
     <div class="countdown-days">{{ daysRemaining }}</div>
   </div>
 </div>
-<div class="banner" *ngIf="daysRemaining == 0">
+<div class="banner" *ngIf="daysRemaining != 0">
   <div id="carouselWrapper">
     <swiper class="mySwiper" [config]="config">
       <ng-template swiperSlide>
@@ -61,6 +61,29 @@
                 <li><strong>6</strong> Schools</li>
                 <li><strong>162</strong> Students</li>
                 <li><strong>55</strong> Teams</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="apMap">Andhra Pradesh</h4>
+              <ul>
+                <li><strong>16</strong> Schools</li>
+                <li><strong>333</strong> Students</li>
+                <li><strong>111</strong> Teams</li>
+              </ul>
+            </div>
+          </div>
+          <a [routerLink]="['/results']" class="viewBtn">View Results</a>
+        </div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div class="centerWrap">
+          <div class="homeCarouselContent">
+            <div>
+              <h4 class="upMap">Uttar Pradesh</h4>
+              <ul>
+                <li><strong>9</strong> Schools</li>
+                <li><strong>125</strong> Students</li>
+                <li><strong>42</strong> Teams</li>
               </ul>
             </div>
           </div>
