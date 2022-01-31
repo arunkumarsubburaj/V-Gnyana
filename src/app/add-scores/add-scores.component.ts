@@ -152,10 +152,10 @@ export class AddScoresComponent implements OnInit, AfterViewInit {
         returnString = 'Jharkhand';
         break;
       case 'AP':
-        returnString = 'AndharPradhesh';
+        returnString = 'Andhra Pradesh';
         break;
       case 'UP':
-        returnString = 'UttarPradhesh';
+        returnString = 'Uttar Pradesh';
         break;
     }
     return returnString;
