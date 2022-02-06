@@ -16,6 +16,9 @@ import { LoaderComponent } from './loader/loader.component';
 import { HomeComponent } from './home/home.component';
 import { AddScoresComponent } from './add-scores/add-scores.component';
 import { AboutComponent } from './about/about.component';
+import { AddFinalScoresComponent } from './add-final-scores/add-final-scores.component';
+import { CommonModule } from '@angular/common';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +29,13 @@ import { AboutComponent } from './about/about.component';
     HomeComponent,
     AddScoresComponent,
     AboutComponent,
+    AddFinalScoresComponent,
+    ResultsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     BrowserAnimationsModule,
     SharedModule,
     HttpClientModule,

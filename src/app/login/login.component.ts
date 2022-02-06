@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
         .subscribe(
           (res) => {
             if (res.code == 200) {
-              this.router.navigateByUrl('/add-marks');
+              this.router.navigateByUrl('/add-final-marks');
               this.toastrService.success(res.message);
             } else {
               this.toastrService.error(res.message);

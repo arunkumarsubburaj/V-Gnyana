@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentObj } from 'src/shared/models/shared.model';
 import { CoreConstants } from '../core.constants';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-results',
@@ -7,12 +9,60 @@ import { CoreConstants } from '../core.constants';
   styleUrls: ['./results.component.scss'],
 })
 export class ResultsComponent implements OnInit {
-  constructor() {}
+  constructor(private userService: UserService) {}
   daysRemaining: number = 0;
+  finalistsData!: StudentObj[];
+  previousData!: StudentObj[];
   ngOnInit(): void {
     this.calculateDaysRemaining();
+    this.getFinalists();
   }
-
+  getStateString(stateKey: string) {
+    let returnString;
+    switch (stateKey) {
+      case 'KA':
+        returnString = 'Karnataka';
+        break;
+      case 'TN':
+        returnString = 'Tamilnadu';
+        break;
+      case 'UT':
+        returnString = 'Uttarakhand';
+        break;
+      case 'MH':
+        returnString = 'Maharashtra';
+        break;
+      case 'JH':
+        returnString = 'Jharkhand';
+        break;
+      case 'AP':
+        returnString = 'Andhra Pradesh';
+        break;
+      case 'UP':
+        returnString = 'Uttar Pradesh';
+        break;
+    }
+    return returnString;
+  }
+  async getFinalists() {
+    let finalistsData = [];
+    const finalists = await this.userService.getFinalists().toPromise();
+    for (let index = 0; index < finalists.length; index++) {
+      const studentData = finalists[index];
+      if (!this.isAlreadyAvailable(studentData.state, finalistsData)) {
+        finalistsData.push(studentData);
+      }
+    }
+    this.finalistsData = finalistsData.sort((a, b) => {
+      return +b.FinalsResult - +a.FinalsResult;
+    });
+    console.log(this.finalistsData);
+  }
+  isAlreadyAvailable(value: string, objArray: StudentObj[]) {
+    return objArray.some((valueObj) => {
+      return valueObj.state == value;
+    });
+  }
   calculateDaysRemaining() {
     const finalsDate = new Date(CoreConstants.finalsDate);
     const todaysDate = new Date(

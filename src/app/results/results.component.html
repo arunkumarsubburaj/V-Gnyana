@@ -9,7 +9,23 @@
       <div class="schoolcol">School</div>
       <div class="pointscol">Points</div>
     </div>
-    <div class="lbTable-row lbTable-list first">
+    <div
+      class="lbTable-row lbTable-list"
+      *ngFor="
+        let item of finalistsData;
+        let i = index;
+        let f = first;
+        let l = last
+      "
+    >
+      <div class="rankcol">{{ i + 1 }}</div>
+      <div class="statecol">{{ getStateString(item.state) }}</div>
+      <div class="schoolcol">{{ item.centerName }}</div>
+      <div class="pointscol">
+        {{ item.FinalsResult }} <span class="gridStatus noChange"></span>
+      </div>
+    </div>
+    <!-- <div class="lbTable-row lbTable-list first">
       <div class="rankcol">1</div>
       <div class="statecol">Maharashtra</div>
       <div class="schoolcol">School</div>
@@ -26,16 +42,28 @@
       <div class="statecol">Uttarakhand</div>
       <div class="schoolcol">School</div>
       <div class="pointscol">30 <span class="gridStatus losed"></span></div>
-    </div>
+    </div> -->
   </div>
   <div class="participation">
     <h2 class="lineHeading"><span>Overall Participatpion</span></h2>
     <table>
       <tr>
-        <th><div><img src="../../assets/images/state-icon.png" alt=""></div>State</th>
-        <th><div><img src="../../assets/images/school-icon.png" alt=""></div>No of Schools</th>
-        <th><div><img src="../../assets/images/student-icon.png" alt=""></div>No of Students</th>
-        <th><div><img src="../../assets/images/teams-icon.png" alt=""></div>No of Teams</th>
+        <th>
+          <div><img src="../../assets/images/state-icon.png" alt="" /></div>
+          State
+        </th>
+        <th>
+          <div><img src="../../assets/images/school-icon.png" alt="" /></div>
+          No of Schools
+        </th>
+        <th>
+          <div><img src="../../assets/images/student-icon.png" alt="" /></div>
+          No of Students
+        </th>
+        <th>
+          <div><img src="../../assets/images/teams-icon.png" alt="" /></div>
+          No of Teams
+        </th>
       </tr>
       <tr>
         <td>Tamilnadu</td>
@@ -106,13 +134,21 @@
         <div class="winnerCol">
           <aside>
             <p>
-              In V-Gnyana Round-1 from Tamil Nadu total of 339 students participated in 113 teams. Out 113 teams 27 teams were selected for semi-finals. In semi-Finals Villanur team was top-scoring team and reached V-Gnyana Finals.
+              In V-Gnyana Round-1 from Tamil Nadu total of 339 students
+              participated in 113 teams. Out 113 teams 27 teams were selected
+              for semi-finals. In semi-Finals Villanur team was top-scoring team
+              and reached V-Gnyana Finals.
             </p>
           </aside>
           <section>
             <img src="./../../assets/images/trophy.png" alt="" />
             <div class="winnerDetails">
-              <div><i>Finalist:</i> <strong style="white-space: nowrap;">1. K Prithee <br>2. G Hemalatha <br>3. M Supriya</strong></div>
+              <div>
+                <i>Finalist:</i>
+                <strong style="white-space: nowrap"
+                  >1. K Prithee <br />2. G Hemalatha <br />3. M Supriya</strong
+                >
+              </div>
               <div><i>Center:</i> <strong>Vilanur</strong></div>
             </div>
           </section>
@@ -129,12 +165,22 @@
         </div>
         <div class="winnerCol">
           <aside>
-            <p>In V-Gnyana Round-1 from Uttarakhand total of 96 students participated in 32 teams. Out 32 teams 5 teams were selected for semi-finals. In semi-Finals Hartola team was top-scoring team and reached V-Gnyana Finals.</p>
+            <p>
+              In V-Gnyana Round-1 from Uttarakhand total of 96 students
+              participated in 32 teams. Out 32 teams 5 teams were selected for
+              semi-finals. In semi-Finals Hartola team was top-scoring team and
+              reached V-Gnyana Finals.
+            </p>
           </aside>
           <section>
             <img src="./../../assets/images/trophy.png" alt="" />
             <div class="winnerDetails">
-              <div><i>Finalist:</i> <strong style="white-space: nowrap;">1. Bhatt <br>2. Bhawna pandey <br>3. Deepak Bhatt</strong></div>
+              <div>
+                <i>Finalist:</i>
+                <strong style="white-space: nowrap"
+                  >1. Bhatt <br />2. Bhawna pandey <br />3. Deepak Bhatt</strong
+                >
+              </div>
               <div><i>Center:</i> <strong>Hartola</strong></div>
             </div>
           </section>
@@ -163,13 +209,23 @@
         </div>
         <div class="winnerCol">
           <aside>
-            <p>In V-Gnyana Round-1 from Karnataka total of 1009 students participated in 338 teams. Out 338 teams 30 teams were selected for semi-finals. In semi-Finals GHPS Mugad Vajra team was top-scoring team and reached V-Gnyana Finals.</p>
+            <p>
+              In V-Gnyana Round-1 from Karnataka total of 1009 students
+              participated in 338 teams. Out 338 teams 30 teams were selected
+              for semi-finals. In semi-Finals GHPS Mugad Vajra team was
+              top-scoring team and reached V-Gnyana Finals.
+            </p>
           </aside>
           <section>
             <img src="./../../assets/images/trophy.png" alt="" />
             <div class="winnerDetails">
-              <div><i>Finalist:</i> <strong style="white-space: nowrap;">1. Kavyasree Madiwalar <br>2. Thirthakumar Kumbar <br>3. Pakirappa
-                Hulakoppa</strong></div>
+              <div>
+                <i>Finalist:</i>
+                <strong style="white-space: nowrap"
+                  >1. Kavyasree Madiwalar <br />2. Thirthakumar Kumbar <br />3.
+                  Pakirappa Hulakoppa</strong
+                >
+              </div>
               <div><i>Center:</i> <strong>GHPS Mugad Vajra</strong></div>
             </div>
           </section>
@@ -189,12 +245,23 @@
         </div>
         <div class="winnerCol">
           <aside>
-            <p>In V-Gnyana Round-1 from Maharashtra total of 411 students participated in 136 teams. Out 136 teams 10 teams were selected for semi-finals. In semi-Finals Hivarezare team was top-scoring team and reached V-Gnyana Finals.</p>
+            <p>
+              In V-Gnyana Round-1 from Maharashtra total of 411 students
+              participated in 136 teams. Out 136 teams 10 teams were selected
+              for semi-finals. In semi-Finals Hivarezare team was top-scoring
+              team and reached V-Gnyana Finals.
+            </p>
           </aside>
           <section>
             <img src="./../../assets/images/trophy.png" alt="" />
             <div class="winnerDetails">
-              <div><i>Finalist:</i> <strong style="white-space: nowrap;">1. Nikita Kate <br>2. Kunal Kale<br>3.Sarthak Borhade</strong></div>
+              <div>
+                <i>Finalist:</i>
+                <strong style="white-space: nowrap"
+                  >1. Nikita Kate <br />2. Kunal Kale<br />3.Sarthak
+                  Borhade</strong
+                >
+              </div>
               <div><i>Center:</i> <strong>Hivarezare</strong></div>
             </div>
           </section>
@@ -214,12 +281,23 @@
         </div>
         <div class="winnerCol">
           <aside>
-            <p>In V-Gnyana Round-1 from Jharkhand total of 162 students participated in 55 teams. Out 55 teams 8 teams were selected for semi-finals. In semi-Finals Koymara team was top-scoring team and reached V-Gnyana Finals.</p>
+            <p>
+              In V-Gnyana Round-1 from Jharkhand total of 162 students
+              participated in 55 teams. Out 55 teams 8 teams were selected for
+              semi-finals. In semi-Finals Koymara team was top-scoring team and
+              reached V-Gnyana Finals.
+            </p>
           </aside>
           <section>
             <img src="./../../assets/images/trophy.png" alt="" />
             <div class="winnerDetails">
-              <div><i>Finalist:</i> <strong style="white-space: nowrap;">1. Aprajita Verma <br>2. Swati Kumari <br>3. Deepika Kumari</strong></div>
+              <div>
+                <i>Finalist:</i>
+                <strong style="white-space: nowrap"
+                  >1. Aprajita Verma <br />2. Swati Kumari <br />3. Deepika
+                  Kumari</strong
+                >
+              </div>
               <div><i>Center:</i> <strong>Koymara</strong></div>
             </div>
           </section>
@@ -236,12 +314,22 @@
         </div>
         <div class="winnerCol">
           <aside>
-            <p>In V-Gnyana Round-1 from Uttarakhand total of 96 students participated in 32 teams. Out 32 teams 5 teams were selected for semi-finals. In semi-Finals Hartola team was top-scoring team and reached V-Gnyana Finals.</p>
+            <p>
+              In V-Gnyana Round-1 from Uttarakhand total of 96 students
+              participated in 32 teams. Out 32 teams 5 teams were selected for
+              semi-finals. In semi-Finals Hartola team was top-scoring team and
+              reached V-Gnyana Finals.
+            </p>
           </aside>
           <section>
             <img src="./../../assets/images/trophy.png" alt="" />
             <div class="winnerDetails">
-              <div><i>Finalist:</i> <strong style="white-space: nowrap;">1. Bhatt <br>2. Bhawna pandey <br>3. Deepak Bhatt</strong></div>
+              <div>
+                <i>Finalist:</i>
+                <strong style="white-space: nowrap"
+                  >1. Bhatt <br />2. Bhawna pandey <br />3. Deepak Bhatt</strong
+                >
+              </div>
               <div><i>Center:</i> <strong>Hartola</strong></div>
             </div>
           </section>
@@ -261,12 +349,22 @@
         </div>
         <div class="winnerCol">
           <aside>
-            <p>In V-Gnyana Round-1 from Andhra Pradesh total of 333 students participated in 111 teams. Out 111 teams 10 teams were selected for semi-finals.</p>
+            <p>
+              In V-Gnyana Round-1 from Andhra Pradesh total of 333 students
+              participated in 111 teams. Out 111 teams 10 teams were selected
+              for semi-finals.
+            </p>
           </aside>
           <section>
             <img src="./../../assets/images/trophy.png" alt="" />
             <div class="winnerDetails">
-              <div><i>Finalist:</i> <strong style="white-space: nowrap;">1. K Anil Kumar <br>2. B Sudhakara <br>3. K Mounika</strong></div>
+              <div>
+                <i>Finalist:</i>
+                <strong style="white-space: nowrap"
+                  >1. K Anil Kumar <br />2. B Sudhakara <br />3. K
+                  Mounika</strong
+                >
+              </div>
               <div><i>Center:</i> <strong>Cheekalabylu</strong></div>
             </div>
           </section>
@@ -283,12 +381,20 @@
         </div>
         <div class="winnerCol">
           <aside>
-            <p>In V-Gnyana Round-1 from Uttar Pradesh total of 125 students participated in 42 teams.</p>
+            <p>
+              In V-Gnyana Round-1 from Uttar Pradesh total of 125 students
+              participated in 42 teams.
+            </p>
           </aside>
           <section>
             <img src="./../../assets/images/trophy.png" alt="" />
             <div class="winnerDetails">
-              <div><i>Finalist:</i> <strong style="white-space: nowrap;">1. Abhishek <br>2. Phoolchand</strong></div>
+              <div>
+                <i>Finalist:</i>
+                <strong style="white-space: nowrap"
+                  >1. Abhishek <br />2. Phoolchand</strong
+                >
+              </div>
               <div><i>Center:</i> <strong>Haluapar</strong></div>
             </div>
           </section>

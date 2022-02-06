@@ -1,0 +1,41 @@
+<div class="addBoContent">
+  <h2>Update Finals Score</h2>
+  <div>
+    <label>Select Team</label>
+    <angular2-multiselect
+      text="Select Team"
+      [data]="teamList"
+      [(ngModel)]="selectedTeam"
+      [settings]="teamDropdownSettings"
+      (onSelect)="onItemSelect($event, 'team')"
+    ></angular2-multiselect>
+  </div>
+  <div class="teamDetails" *ngIf="showStudentData()">
+    <ul>
+      <li *ngFor="let student of studentsOnTeam">
+        {{ student.studentId + " - " + student.studentName }}
+        {{ student.isBackupTeam ? "- (Backup Team)" : "" }}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="showStudentData()">
+    <label>Total Score so far</label>
+    <p>{{ previousMark }}</p>
+  </div>
+  <div>
+    <label>This Round Score</label>
+    <input
+      type="text"
+      name="score"
+      id="score"
+      pattern="[0-9]+"
+      title="Please enter Score"
+      placeholder="Please enter Score"
+      required
+      #score
+    />
+  </div>
+  <div class="btnWrap">
+    <button class="formButton" (click)="updateMarks()">Submit</button>
+  </div>
+</div>

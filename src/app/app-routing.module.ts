@@ -7,6 +7,7 @@ import { ResultsComponent } from './results/results.component';
 import { AddScoresComponent } from './add-scores/add-scores.component';
 import { AuthGuardService as AuthGuard } from 'src/shared/services/auth-guard.service';
 import { AboutComponent } from './about/about.component';
+import { AddFinalScoresComponent } from './add-final-scores/add-final-scores.component';
 const routes: Routes = [
   {
     path: '',
@@ -27,6 +28,11 @@ const routes: Routes = [
       {
         path: 'add-marks',
         component: AddScoresComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'add-final-marks',
+        component: AddFinalScoresComponent,
         canActivate: [AuthGuard],
       },
       { path: '**', redirectTo: '' },

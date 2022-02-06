@@ -6,7 +6,7 @@ export interface StudentObj {
   teamNumber: string;
   centerName: string;
   semiFinalsResult?: any;
-  FianlsResult?: any;
+  FinalsResult?: any;
   FinalsQualified?: any;
   isWinner?: any;
   isBackupTeam: number;

@@ -1,0 +1,41 @@
+// addBoContent
+.addBoContent {
+  padding: 40px;
+  color: #fff;
+  background: #007ec8;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+
+  h2 {
+    flex: 0 0 100%;
+    margin-bottom: 50px;
+    font-weight: 500;
+    font-size: 24px;
+  }
+  > div {
+    margin: 10px;
+  }
+  .btnWrap {
+    flex: 0 0 100%;
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  label {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+}
+input#score {
+  width: 100%;
+  line-height: 35px;
+  text-indent: 10px;
+  font-size: 16px;
+}

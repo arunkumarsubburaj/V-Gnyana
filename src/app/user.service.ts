@@ -25,4 +25,17 @@ export class UserService {
   updateSemiMarks(payLoad: UpdatePayload) {
     return this.http.post(environment.apiUrl + '/updateSemiMarks', payLoad);
   }
+  getFinalists() {
+    return this.http.get(environment.apiUrl + '/getFinalists') as Observable<
+      StudentObj[]
+    >;
+  }
+  getStateMarks(state: string) {
+    return this.http.get(
+      environment.apiUrl + '/getStateMarks?state=' + state
+    ) as Observable<StudentObj[]>;
+  }
+  updateFinalMarks(payload: { state: string; marks: number }) {
+    return this.http.put(environment.apiUrl + '/updateFinalMarks', payload);
+  }
 }

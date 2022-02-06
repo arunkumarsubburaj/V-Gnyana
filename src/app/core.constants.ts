@@ -9,6 +9,6 @@ export class CoreConstants {
     return '/logout';
   }
   public static get finalsDate(): string {
-    return '02/01/2022';
+    return '02/10/2022';
   }
 }
