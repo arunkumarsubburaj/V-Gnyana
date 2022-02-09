@@ -12,7 +12,7 @@
     color: #fff;
     font-size: 1.6rem;
     list-style: none;
-    background: #136b88;
+    background: #1954aa;
     border-radius: 3px;
     cursor: pointer;
 
@@ -29,7 +29,7 @@
     }
 
     &:hover {
-      background: #1954aa;
+      background: #00008c;
       &:before {
         opacity: 1;
       }
@@ -45,7 +45,7 @@
     transform: rotate(-135deg);
   }
   &[open] summary {
-    background: #1954aa;
+    background: #0a0a7e;
   }
 
   .uiAccordion-body {
