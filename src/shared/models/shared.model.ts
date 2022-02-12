@@ -10,4 +10,5 @@ export interface StudentObj {
   FinalsQualified?: any;
   isWinner?: any;
   isBackupTeam: number;
+  statusClass?: string;
 }

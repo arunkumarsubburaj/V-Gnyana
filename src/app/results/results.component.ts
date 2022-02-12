@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { StudentObj } from 'src/shared/models/shared.model';
 import { CoreConstants } from '../core.constants';
 import { UserService } from '../user.service';
@@ -8,55 +9,102 @@ import { UserService } from '../user.service';
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.scss'],
 })
-export class ResultsComponent implements OnInit {
-  constructor(private userService: UserService) {}
+export class ResultsComponent implements OnInit, OnDestroy {
+  constructor(
+    private userService: UserService,
+    private toastrService: ToastrService
+  ) {}
   daysRemaining: number = 0;
   finalistsData!: StudentObj[];
-  previousData!: StudentObj[];
+  previousData: StudentObj[] = [];
+  myInterval!: any;
   ngOnInit(): void {
     this.calculateDaysRemaining();
     this.getFinalists();
+    this.myInterval = setInterval(() => {
+      this.getFinalists();
+    }, 15000);
   }
   getStateString(stateKey: string) {
     let returnString;
     switch (stateKey) {
       case 'KA':
-        returnString = 'Karnataka';
+        returnString = 'Karnataka Champions';
         break;
       case 'TN':
-        returnString = 'Tamilnadu';
+        returnString = 'Tamilnadu Thalaivas';
         break;
       case 'UT':
-        returnString = 'Uttarakhand';
+        returnString = 'Uttarakhand Wonders';
         break;
       case 'MH':
-        returnString = 'Maharashtra';
+        returnString = 'Maharashtra Warriors';
         break;
       case 'JH':
-        returnString = 'Jharkhand';
+        returnString = 'Jharkhand Rockstars';
         break;
       case 'AP':
-        returnString = 'Andhra Pradesh';
+        returnString = 'Andhra Pradesh Superstars';
         break;
       case 'UP':
-        returnString = 'Uttar Pradesh';
+        returnString = 'Uttar Pradesh Challengers';
         break;
     }
     return returnString;
   }
   async getFinalists() {
-    let finalistsData = [];
-    const finalists = await this.userService.getFinalists().toPromise();
-    for (let index = 0; index < finalists.length; index++) {
-      const studentData = finalists[index];
-      if (!this.isAlreadyAvailable(studentData.state, finalistsData)) {
-        finalistsData.push(studentData);
+    let finalistsData: StudentObj[] = [];
+    try {
+      const finalists = await this.userService.getFinalists().toPromise();
+      for (let index = 0; index < finalists.length; index++) {
+        const studentData = finalists[index];
+        if (!this.isAlreadyAvailable(studentData.state, finalistsData)) {
+          finalistsData.push(studentData);
+        }
       }
+      this.finalistsData = finalistsData.sort((a, b) => {
+        return +b.FinalsResult - +a.FinalsResult;
+      });
+      if (this.previousData.length == 0) {
+        this.previousData = JSON.parse(JSON.stringify(this.finalistsData));
+      } else if (this.orderChanged()) {
+        this.finalistsData = this.updateStatus(this.finalistsData);
+        this.previousData = JSON.parse(JSON.stringify(this.finalistsData));
+      }
+    } catch (error) {
+      this.toastrService.error('error');
     }
-    this.finalistsData = finalistsData.sort((a, b) => {
-      return +b.FinalsResult - +a.FinalsResult;
-    });
-    console.log(this.finalistsData);
+  }
+  orderChanged() {
+    let orderChanged = false;
+    for (let newIndex = 0; newIndex < this.finalistsData.length; newIndex++) {
+      const newData = this.finalistsData[newIndex];
+      const prevData = this.previousData[newIndex];
+      if (newData.state != prevData.state) {
+        orderChanged = true;
+      }
+      if (orderChanged) break;
+    }
+    return orderChanged;
+  }
+  updateStatus(finalistsData: StudentObj[]): StudentObj[] {
+    const finalReturnObj: StudentObj[] = [];
+    for (let newIndex = 0; newIndex < finalistsData.length; newIndex++) {
+      const currentData = finalistsData[newIndex];
+      this.previousData.forEach((prevData, preIndex) => {
+        if (currentData.state == prevData.state) {
+          if (preIndex == newIndex) {
+            currentData['statusClass'] = 'gridStatus noChange';
+          } else if (preIndex > newIndex) {
+            currentData['statusClass'] = 'gridStatus gained';
+          } else {
+            currentData['statusClass'] = 'gridStatus losed';
+          }
+          finalReturnObj.push(currentData);
+        }
+      });
+    }
+    return finalReturnObj;
   }
   isAlreadyAvailable(value: string, objArray: StudentObj[]) {
     return objArray.some((valueObj) => {
@@ -78,5 +126,8 @@ export class ResultsComponent implements OnInit {
     // To calculate the no. of days between two dates
     this.daysRemaining = Difference_In_Time / (1000 * 3600 * 24);
     // this.daysRemaining = 0; // Uncomment this to view the slider
+  }
+  ngOnDestroy(): void {
+    window.clearInterval(this.myInterval);
   }
 }

@@ -21,13 +21,13 @@ export class AddFinalScoresComponent implements OnInit, AfterViewInit {
     private toastrService: ToastrService
   ) {}
   teamList: { viewValue: string; value: string }[] = [
-    { value: 'TN', viewValue: 'Team Tamilnadu' },
-    { value: 'KA', viewValue: 'Team Karnataka' },
-    { value: 'UT', viewValue: 'Team Uttarakhand' },
-    { value: 'MH', viewValue: 'Team Maharashtra' },
-    { value: 'JH', viewValue: 'Team Jharkhand' },
-    { value: 'AP', viewValue: 'Team Andhra Pradesh' },
-    { value: 'UP', viewValue: 'Team Uttar Pradesh' },
+    { value: 'TN', viewValue: 'Tamilnadu Thalaivas' },
+    { value: 'KA', viewValue: 'Karnataka Champions' },
+    { value: 'UT', viewValue: 'Uttarakhand Wonders' },
+    { value: 'MH', viewValue: 'Maharashtra Warriors' },
+    { value: 'JH', viewValue: 'Jharkhand Rockstars' },
+    { value: 'AP', viewValue: 'Andhra Pradesh Superstars' },
+    { value: 'UP', viewValue: 'Uttar Pradesh Challengers' },
   ];
   selectedTeam: { viewValue: string; value: string }[] = [];
   studentData!: StudentObj[];

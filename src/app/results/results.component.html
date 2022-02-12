@@ -22,7 +22,8 @@
       <div class="statecol">{{ getStateString(item.state) }}</div>
       <div class="schoolcol">{{ item.centerName }}</div>
       <div class="pointscol">
-        {{ item.FinalsResult }} <span class="gridStatus noChange"></span>
+        {{ item.FinalsResult }}
+        <span [class]="item.statusClass"></span>
       </div>
     </div>
     <!-- <div class="lbTable-row lbTable-list first">
@@ -305,7 +306,7 @@
       </div>
     </div>
   </details>
-  <details class="uiAccordion">
+  <!-- <details class="uiAccordion">
     <summary><span>Uttarakhand</span></summary>
     <div class="uiAccordion-body">
       <div class="batchRow">
@@ -336,7 +337,7 @@
         </div>
       </div>
     </div>
-  </details>
+  </details> -->
   <details class="uiAccordion">
     <summary><span>Andhra Pradesh Superstars</span></summary>
     <div class="uiAccordion-body">
