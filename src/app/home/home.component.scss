@@ -83,6 +83,7 @@
   &.days {
     background-image: url(../../assets/images/banner1.jpg);
   }
+  height: 500px;
 }
 
 .homeList {
@@ -109,6 +110,7 @@
   padding-top: 30px;
   color: #fff;
   text-align: center;
+  height: calc(100% - 9rem);
   > div {
     flex: 0 0 45%;
     margin: 0 2%;
@@ -118,16 +120,16 @@
     align-items: center;
     min-height: 100px;
     min-width: 100px;
-    padding: 120px 0 0;
+    padding: 130px 0 8px;
     margin-top: -20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.6rem;
     background: url("../../assets/images/state-tn.png") no-repeat center center;
     text-transform: uppercase;
     border-bottom: 2px dashed #fff;
     @media (min-width: 768px) {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       margin-bottom: 16px;
     }
     &.ukMap {
@@ -160,28 +162,60 @@
     @media (min-width: 1024px) {
       display: flex;
       align-items: center;
-      justify-content: center;
-      strong {
-        margin-right: 16px;
+      padding-left: 10%;
+    }
+  }
+
+  ul {
+    li.score {
+      position: relative;
+      background-color: #fff;
+      color: #00008c;
+      font-size: 3rem;
+      padding: 3.2rem 2rem 1rem;
+      border-radius: 10px;
+      font-family: "Fjalla One", sans-serif;
+      overflow: hidden;
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 5px;
+        text-align: center;
+        content: "Score";
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+        background-color: #00008c;
+        color: #fff;
+      }
+      @media (max-width: 1023px) {
+        display: inline-block;
       }
     }
-    strong {
-      font-family: "Alfa Slab One", cursive;
-      display: block;
-      text-align: center;
-      letter-spacing: 2px;
-      font-size: 120%;
+
+    @media (min-width: 1024px) {
+      position: relative;
+
+      li.score {
+        position: absolute;
+        right: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
 }
 .viewBtn {
-  background-color: #f7941d;
+  background-color: #e87825;
   padding: 0.6em 1.2em;
   font-size: 1.6rem;
   color: #fff;
   display: inline-block;
   border-radius: 3px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.12);
+  margin-left: 10px;
+  margin-right: 10px;
   @media (min-width: 768px) {
     margin-top: 20px;
   }

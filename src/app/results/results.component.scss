@@ -162,14 +162,21 @@
     }
 
     th {
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 16px;
+      font-weight: 700;
+      color: #00008c;
     }
 
     td:not(:first-child) {
-      font-family: "Alfa Slab One", cursive;
+      font-family: "Fjalla One", sans-serif;
+      font-size: 2.2rem;
     }
   }
+}
+
+.thImg img {
+  max-height: 50px;
+  margin-bottom: 10px;
 }
 
 .batchRow {
@@ -224,6 +231,10 @@
           width: 100%;
         }
       }
+      @media (min-width: 768px) {
+        position: relative;
+        min-height: 200px;
+      }
     }
     img {
       max-height: 120px;
@@ -242,6 +253,35 @@
       section {
         flex: 0 0 auto;
       }
+    }
+  }
+}
+.winnersImg {
+  margin-top: 0;
+  @media (min-width: 768px) {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-50%);
+  }
+  @media (min-width: 960px) {
+    right: 10%;
+  }
+  @media (min-width: 1300px) {
+    right: 0;
+    flex-direction: row;
+  }
+  img {
+    max-width: 60px;
+    margin: 0 3px !important;
+    @media (min-width: 768px) {
+      margin: 3px 0 !important;
+    }
+    @media (min-width: 1300px) {
+      margin: 0 5px !important;
+      max-width: 80px;
     }
   }
 }

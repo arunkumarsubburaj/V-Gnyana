@@ -86,12 +86,11 @@
   justify-content: center;
   margin-bottom: 3rem;
   .numFont {
-    font-size: 2.2rem;
+    font-size: 3.6rem;
   }
   sup {
     display: inline-block;
     transform: translateY(-10px);
-    padding-left: 5px;
     font-size: 14px;
   }
 }
@@ -115,14 +114,16 @@
         margin-bottom: 10px;
       }
     }
+    > div {
+      width: 110px;
+    }
     .numFont {
-      font-size: 2.4rem;
+      font-size: 3.2rem;
+      font-family: "Fjalla One", sans-serif;
     }
   }
 }
-.numFont {
-  font-family: "Alfa Slab One", cursive;
-}
+
 .journeyTitle {
   margin: 5rem 0;
   text-align: center;
