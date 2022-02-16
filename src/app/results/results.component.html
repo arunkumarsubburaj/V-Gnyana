@@ -1,8 +1,8 @@
 <div class="centerWrap mB30">
-  <h1 class="lineHeading" *ngIf="daysRemaining == 0">
+  <h1 class="lineHeading" *ngIf="daysRemaining <= 0">
     <span>Leaderboard</span>
   </h1>
-  <div class="lbTable" *ngIf="daysRemaining == 0">
+  <div class="lbTable" *ngIf="daysRemaining <= 0">
     <div class="lbTable-row lbTable-header">
       <div class="rankcol">Rank</div>
       <div class="statecol">State</div>
@@ -23,7 +23,7 @@
       <div class="schoolcol">{{ item.centerName }}</div>
       <div class="pointscol">
         {{ item.FinalsResult }}
-        <span [class]="item.statusClass"></span>
+        <span [class]="item.statusClass" class="gridStatus losed"></span>
       </div>
     </div>
     <!-- <div class="lbTable-row lbTable-list first">
@@ -45,24 +45,43 @@
       <div class="pointscol">30 <span class="gridStatus losed"></span></div>
     </div> -->
   </div>
+  <div class="youtubeWrapper" id="youtubeWrapper">
+    <iframe
+      *ngIf="daysRemaining <= 0"
+      class="youtubeLive"
+      src="https://www.youtube.com/embed/EujHyhBZQmg"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
   <div class="participation">
     <h2 class="lineHeading"><span>Overall Participatpion</span></h2>
     <table>
       <tr>
         <th>
-          <div class="thImg"><img src="../../assets/images/state-icon.png" alt="" /></div>
+          <div class="thImg">
+            <img src="../../assets/images/state-icon.png" alt="" />
+          </div>
           States
         </th>
         <th>
-          <div class="thImg"><img src="../../assets/images/school-icon.png" alt="" /></div>
+          <div class="thImg">
+            <img src="../../assets/images/school-icon.png" alt="" />
+          </div>
           No of Schools
         </th>
         <th>
-          <div class="thImg"><img src="../../assets/images/student-icon.png" alt="" /></div>
+          <div class="thImg">
+            <img src="../../assets/images/student-icon.png" alt="" />
+          </div>
           No of Students
         </th>
         <th>
-          <div class="thImg"><img src="../../assets/images/teams-icon.png" alt="" /></div>
+          <div class="thImg">
+            <img src="../../assets/images/teams-icon.png" alt="" />
+          </div>
           No of Teams
         </th>
       </tr>
@@ -151,11 +170,11 @@
                 >
               </div>
               <div><i>Center:</i> <strong>Vilanur</strong></div>
-              <div class="winnersImg">
-                <img src="../../assets/images/tn1.png" alt="">
-                <img src="../../assets/images/tn2.png" alt="">
-                <img src="../../assets/images/tn3.png" alt="">
-              </div>
+              <!-- <div class="winnersImg">
+                <img src="../../assets/images/tn1.png" alt="" />
+                <img src="../../assets/images/tn2.png" alt="" />
+                <img src="../../assets/images/tn3.png" alt="" />
+              </div> -->
             </div>
           </section>
         </div>
@@ -189,9 +208,9 @@
               </div>
               <div><i>Center:</i> <strong>Hartola</strong></div>
               <div class="winnersImg">
-                <img src="../../assets/images/ut1.png" alt="">
-                <img src="../../assets/images/ut2.png" alt="">
-                <img src="../../assets/images/ut3.png" alt="">
+                <img src="../../assets/images/ut1.png" alt="" />
+                <img src="../../assets/images/ut2.png" alt="" />
+                <img src="../../assets/images/ut3.png" alt="" />
               </div>
             </div>
           </section>
@@ -239,9 +258,9 @@
               </div>
               <div><i>Center:</i> <strong>GHPS Mugad Vajra</strong></div>
               <div class="winnersImg">
-                <img src="../../assets/images/ka1.png" alt="">
-                <img src="../../assets/images/ka2.png" alt="">
-                <img src="../../assets/images/ka3.png" alt="">
+                <img src="../../assets/images/ka1.png" alt="" />
+                <img src="../../assets/images/ka2.png" alt="" />
+                <img src="../../assets/images/ka3.png" alt="" />
               </div>
             </div>
           </section>
@@ -280,9 +299,9 @@
               </div>
               <div><i>Center:</i> <strong>Hivarezare</strong></div>
               <div class="winnersImg">
-                <img src="../../assets/images/mh1.png" alt="">
-                <img src="../../assets/images/mh2.png" alt="">
-                <img src="../../assets/images/mh3.png" alt="">
+                <img src="../../assets/images/mh1.png" alt="" />
+                <img src="../../assets/images/mh2.png" alt="" />
+                <img src="../../assets/images/mh3.png" alt="" />
               </div>
             </div>
           </section>
@@ -321,9 +340,9 @@
               </div>
               <div><i>Center:</i> <strong>Koymara</strong></div>
               <div class="winnersImg">
-                <img src="../../assets/images/jh1.png" alt="">
-                <img src="../../assets/images/jh2.png" alt="">
-                <img src="../../assets/images/jh3.png" alt="">
+                <img src="../../assets/images/jh1.png" alt="" />
+                <img src="../../assets/images/jh2.png" alt="" />
+                <img src="../../assets/images/jh3.png" alt="" />
               </div>
             </div>
           </section>
@@ -361,9 +380,9 @@
               </div>
               <div><i>Center:</i> <strong>Cheekalabylu</strong></div>
               <div class="winnersImg">
-                <img src="../../assets/images/ap1.png" alt="">
-                <img src="../../assets/images/ap2.png" alt="">
-                <img src="../../assets/images/ap3.png" alt="">
+                <img src="../../assets/images/ap1.png" alt="" />
+                <img src="../../assets/images/ap2.png" alt="" />
+                <img src="../../assets/images/ap3.png" alt="" />
               </div>
             </div>
           </section>
@@ -391,14 +410,14 @@
               <div>
                 <i>Finalist:</i>
                 <strong style="white-space: nowrap"
-                  >1. Abhishek <br />2. Phoolchand<br>3. Ravi</strong
+                  >1. Abhishek <br />2. Phoolchand<br />3. Ravi</strong
                 >
               </div>
               <div><i>Center:</i> <strong>Haluapar</strong></div>
               <div class="winnersImg">
-                <img src="../../assets/images/up1.png" alt="">
-                <img src="../../assets/images/up2.png" alt="">
-                <img src="../../assets/images/up3.png" alt="">
+                <img src="../../assets/images/up1.png" alt="" />
+                <img src="../../assets/images/up2.png" alt="" />
+                <img src="../../assets/images/up3.png" alt="" />
               </div>
             </div>
           </section>

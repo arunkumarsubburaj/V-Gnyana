@@ -1,9 +1,9 @@
-<div class="banner days" *ngIf="daysRemaining != 0">
+<div class="banner days" *ngIf="daysRemaining > 0">
   <div class="countdown">
     <div class="countdown-days">{{ daysRemaining }}</div>
   </div>
 </div>
-<div class="banner" *ngIf="daysRemaining == 0">
+<div class="banner" *ngIf="daysRemaining <= 0">
   <div id="carouselWrapper">
     <swiper class="mySwiper" [config]="config">
       <ng-template swiperSlide>
@@ -15,7 +15,7 @@
                 <li>K Prithee</li>
                 <li>G Hemalatha</li>
                 <li>M Supriya</li>
-                <li class="score">99</li>
+                <li class="score" id="tn">0</li>
               </ul>
             </div>
             <div>
@@ -24,12 +24,17 @@
                 <li>Bhatt</li>
                 <li>Bhawna pandey</li>
                 <li>Deepak Bhatt</li>
-                <li class="score">99</li>
+                <li class="score" id="ut">0</li>
               </ul>
             </div>
           </div>
-          <a [routerLink]="['/results']" class="viewBtn">Results</a>
-          <a [routerLink]="['/results']" class="viewBtn">Live Update</a>
+          <a [routerLink]="['/results']" class="viewBtn">Leaderboard</a>
+          <a
+            [routerLink]="['/results']"
+            fragment="youtubeWrapper"
+            class="viewBtn"
+            >Live Update</a
+          >
         </div>
       </ng-template>
       <ng-template swiperSlide>
@@ -41,7 +46,7 @@
                 <li>Kavyasree Madiwalar</li>
                 <li>Thirthakumar Kumbar</li>
                 <li>Pakirappa Hulakoppa</li>
-                <li class="score">99</li>
+                <li class="score" id="ka">0</li>
               </ul>
             </div>
             <div>
@@ -50,12 +55,17 @@
                 <li>Nikita Kate</li>
                 <li>Kunal Kale</li>
                 <li>Sarthak Borhade</li>
-                <li class="score">1234</li>
+                <li class="score" id="mh">0</li>
               </ul>
             </div>
           </div>
-          <a [routerLink]="['/results']" class="viewBtn">Results</a>
-          <a [routerLink]="['/results']" class="viewBtn">Live Update</a>
+          <a [routerLink]="['/results']" class="viewBtn">Leaderboard</a>
+          <a
+            [routerLink]="['/results']"
+            fragment="youtubeWrapper"
+            class="viewBtn"
+            >Live Update</a
+          >
         </div>
       </ng-template>
       <ng-template swiperSlide>
@@ -67,7 +77,7 @@
                 <li>Aprajita Verma</li>
                 <li>Swati Kumari</li>
                 <li>Deepika Kumari</li>
-                <li class="score">99</li>
+                <li class="score" id="jh">0</li>
               </ul>
             </div>
             <div>
@@ -76,12 +86,17 @@
                 <li>K Anil Kumar</li>
                 <li>B Sudhakara</li>
                 <li>K Mounika</li>
-                <li class="score">9</li>
+                <li class="score" id="ap">0</li>
               </ul>
             </div>
           </div>
-          <a [routerLink]="['/results']" class="viewBtn">Results</a>
-          <a [routerLink]="['/results']" class="viewBtn">Live Update</a>
+          <a [routerLink]="['/results']" class="viewBtn">Leaderboard</a>
+          <a
+            [routerLink]="['/results']"
+            fragment="youtubeWrapper"
+            class="viewBtn"
+            >Live Update</a
+          >
         </div>
       </ng-template>
       <ng-template swiperSlide>
@@ -93,12 +108,17 @@
                 <li>Abhishek</li>
                 <li>Phoolchand</li>
                 <li>Ravi</li>
-                <li class="score">999</li>
+                <li class="score" id="up">0</li>
               </ul>
             </div>
           </div>
-          <a [routerLink]="['/results']" class="viewBtn">Results</a>
-          <a [routerLink]="['/results']" class="viewBtn">Live Update</a>
+          <a [routerLink]="['/results']" class="viewBtn">Leaderboard</a>
+          <a
+            [routerLink]="['/results']"
+            fragment="youtubeWrapper"
+            class="viewBtn"
+            >Live Update</a
+          >
         </div>
       </ng-template>
     </swiper>
@@ -115,8 +135,8 @@
         quizzing event is conducted in 3 rounds covering a breadth of topics -
         About India, Current Affairs, Health & Hygiene, and Sports across 140
         schools from 7 States (Andhra Pradesh, Jharkhand, Maharashtra,
-        Karnataka, Tamil Nadu, Uttar Pradesh and Uttarakhand )
-        reaching 2500+ students in teams of 3 students.
+        Karnataka, Tamil Nadu, Uttar Pradesh and Uttarakhand ) reaching 2500+
+        students in teams of 3 students.
       </p>
     </aside>
     <figure><img src="../../assets/images/home1.jpg" alt="" /></figure>
@@ -126,7 +146,7 @@
     <aside>
       <p>
         Along with LTI Volunteer’s as pillars of this event, this year we are
-        engaging 50+ volunteers to conduct the semi finals for the students in
+        engaging 29 volunteers to conduct the semi finals for the students in
         round-2.
       </p>
       <p>
@@ -159,7 +179,7 @@
       <span
         ><strong>Finals</strong> - Online Live quiz to be conducted by external
         Quizmasters. The Top scoring team from every state enters the national
-        final. A total of 8 teams in finals representing each state.</span
+        final. A total of 7 teams in finals representing each state.</span
       >
     </li>
   </ul>

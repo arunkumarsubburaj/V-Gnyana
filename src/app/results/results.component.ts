@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, AfterViewInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { StudentObj } from 'src/shared/models/shared.model';
 import { CoreConstants } from '../core.constants';
@@ -9,7 +9,7 @@ import { UserService } from '../user.service';
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.scss'],
 })
-export class ResultsComponent implements OnInit, OnDestroy {
+export class ResultsComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     private userService: UserService,
     private toastrService: ToastrService
@@ -21,9 +21,22 @@ export class ResultsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.calculateDaysRemaining();
     this.getFinalists();
-    this.myInterval = setInterval(() => {
-      this.getFinalists();
-    }, 15000);
+    if (this.daysRemaining <= 0) {
+      this.myInterval = setInterval(() => {
+        this.getFinalists();
+      }, 15000);
+    }
+  }
+  ngAfterViewInit(): void {
+    const hashValue = window.location.hash;
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      if (hashValue && hashValue.length > 0) {
+        const targetElement = document.querySelector(hashValue) as HTMLElement;
+        const top = targetElement.offsetTop;
+        window.scrollTo({ top: top - 20, behavior: 'smooth' });
+      }
+    }, 350);
   }
   getStateString(stateKey: string) {
     let returnString;
@@ -128,6 +141,8 @@ export class ResultsComponent implements OnInit, OnDestroy {
     // this.daysRemaining = 0; // Uncomment this to view the slider
   }
   ngOnDestroy(): void {
-    window.clearInterval(this.myInterval);
+    if (this.daysRemaining <= 0) {
+      window.clearInterval(this.myInterval);
+    }
   }
 }
