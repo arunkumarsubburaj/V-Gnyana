@@ -45,9 +45,8 @@
       <div class="pointscol">30 <span class="gridStatus losed"></span></div>
     </div> -->
   </div>
-  <div class="youtubeWrapper" id="youtubeWrapper">
+  <div class="youtubeWrapper" id="youtubeWrapper" *ngIf="daysRemaining <= 0">
     <iframe
-      *ngIf="daysRemaining <= 0"
       class="youtubeLive"
       src="https://www.youtube.com/embed/EujHyhBZQmg"
       title="YouTube video player"
@@ -382,7 +381,7 @@
               <div class="winnersImg">
                 <img src="../../assets/images/ap1.png" alt="" />
                 <img src="../../assets/images/ap2.png" alt="" />
-                <img src="../../assets/images/ap3.png" alt="" />
+                <!-- <img src="../../assets/images/ap3.png" alt="" /> -->
               </div>
             </div>
           </section>
