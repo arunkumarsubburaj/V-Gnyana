@@ -52,19 +52,21 @@
 }
 .statecol {
   flex: 0 0 30%;
+  text-align: center;
   @media (max-width: 767px) {
     flex: 0 0 100px;
   }
 }
 .schoolcol {
-  flex: 0 0 40%;
+  flex: 0 0 30%;
+  text-align: center;
   @media (max-width: 767px) {
     flex: 1 0 auto;
   }
 }
 .pointscol {
   position: relative;
-  flex: 0 0 20%;
+  flex: 0 0 30%;
   text-align: center;
   @media (max-width: 767px) {
     flex: 0 0 100px;
@@ -104,22 +106,38 @@
   }
 
   background: transparent;
-  font-size: 26px;
-  &.gained {
+  font-size: 35px;
+  &.first {
     &:before {
       // content: "\f176";
-      content: "\1F60A";
+      content: "\1F604";
     }
   }
-  &.losed {
+  &.second:before {
+    // content: "\e908";
+    content: "\1F60A";
+  }
+  &.third:before {
+    // content: "\e908";
+    content: "\1F642";
+  }
+  &.fourth:before {
+    // content: "\e908";
+    content: "\1F611";
+  }
+  &.fifth:before {
+    // content: "\1F614";
+    content: "\1F614";
+  }
+  &.sixth:before {
+    // content: "\e908";
+    content: "\1F612";
+  }
+  &.seventh {
     &:before {
       // content: "\f175";
-      content: "\1F61E";
+      content: "\1F641";
     }
-  }
-  &.noChange:before {
-    // content: "\e908";
-    content: "\1F610";
   }
 }
 

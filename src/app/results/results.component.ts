@@ -78,46 +78,43 @@ export class ResultsComponent implements OnInit, OnDestroy, AfterViewInit {
       this.finalistsData = finalistsData.sort((a, b) => {
         return +b.FinalsResult - +a.FinalsResult;
       });
-      if (this.previousData.length == 0) {
-        this.previousData = JSON.parse(JSON.stringify(this.finalistsData));
-      } else if (this.orderChanged()) {
-        this.finalistsData = this.updateStatus(this.finalistsData);
-        this.previousData = JSON.parse(JSON.stringify(this.finalistsData));
-      }
+      this.updateStatus();
     } catch (error) {
       this.toastrService.error('error');
     }
   }
-  orderChanged() {
-    let orderChanged = false;
-    for (let newIndex = 0; newIndex < this.finalistsData.length; newIndex++) {
-      const newData = this.finalistsData[newIndex];
-      const prevData = this.previousData[newIndex];
-      if (newData.state != prevData.state) {
-        orderChanged = true;
-      }
-      if (orderChanged) break;
-    }
-    return orderChanged;
-  }
-  updateStatus(finalistsData: StudentObj[]): StudentObj[] {
-    const finalReturnObj: StudentObj[] = [];
-    for (let newIndex = 0; newIndex < finalistsData.length; newIndex++) {
-      const currentData = finalistsData[newIndex];
-      this.previousData.forEach((prevData, preIndex) => {
-        if (currentData.state == prevData.state) {
-          if (preIndex == newIndex) {
-            currentData['statusClass'] = 'gridStatus noChange';
-          } else if (preIndex > newIndex) {
-            currentData['statusClass'] = 'gridStatus gained';
-          } else {
-            currentData['statusClass'] = 'gridStatus losed';
-          }
-          finalReturnObj.push(currentData);
+  updateStatus() {
+    this.finalistsData.forEach((currentData: StudentObj, index: number) => {
+      if (currentData.FinalsResult == 0) {
+        currentData['statusClass'] = 'gridStatus fourth';
+      } else {
+        switch (index) {
+          case 0:
+            currentData['statusClass'] = 'gridStatus first';
+            break;
+          case 1:
+            currentData['statusClass'] = 'gridStatus second';
+            break;
+          case 2:
+            currentData['statusClass'] = 'gridStatus third';
+            break;
+          case 3:
+            currentData['statusClass'] = 'gridStatus fourth';
+            break;
+          case 4:
+            currentData['statusClass'] = 'gridStatus fifth';
+            break;
+          case 5:
+            currentData['statusClass'] = 'gridStatus sixth';
+            break;
+          case 6:
+            currentData['statusClass'] = 'gridStatus seventh';
+            break;
+          default:
+            break;
         }
-      });
-    }
-    return finalReturnObj;
+      }
+    });
   }
   isAlreadyAvailable(value: string, objArray: StudentObj[]) {
     return objArray.some((valueObj) => {
