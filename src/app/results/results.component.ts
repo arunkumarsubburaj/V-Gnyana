@@ -86,7 +86,7 @@ export class ResultsComponent implements OnInit, OnDestroy, AfterViewInit {
   updateStatus() {
     this.finalistsData.forEach((currentData: StudentObj, index: number) => {
       if (currentData.FinalsResult == 0) {
-        currentData['statusClass'] = 'gridStatus fourth';
+        currentData['statusClass'] = '';
       } else {
         switch (index) {
           case 0:
