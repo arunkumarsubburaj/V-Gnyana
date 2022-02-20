@@ -22,12 +22,12 @@
       <a [routerLink]="['/results']" routerLinkActive="active"
         ><i class="icon-results"></i><span>Results</span></a
       >
-      <a [routerLink]="['/login']" routerLinkActive="active" *ngIf="!isLoggedIn"
+      <!-- <a [routerLink]="['/login']" routerLinkActive="active" *ngIf="!isLoggedIn"
         ><i class="icon-login"></i><span>Login</span></a
       >
       <a *ngIf="isLoggedIn" (click)="logout()" class="logoutBtn"
         ><i class="icon-login"></i><span>Logout</span></a
-      >
+      > -->
     </nav>
   </header>
   <router-outlet></router-outlet>
