@@ -85,35 +85,35 @@ export class ResultsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
   updateStatus() {
     this.finalistsData.forEach((currentData: StudentObj, index: number) => {
-      if (currentData.FinalsResult == 0) {
-        currentData['statusClass'] = '';
-      } else {
-        switch (index) {
-          case 0:
-            currentData['statusClass'] = 'gridStatus first';
-            break;
-          case 1:
-            currentData['statusClass'] = 'gridStatus second';
-            break;
-          case 2:
-            currentData['statusClass'] = 'gridStatus third';
-            break;
-          case 3:
-            currentData['statusClass'] = 'gridStatus fourth';
-            break;
-          case 4:
-            currentData['statusClass'] = 'gridStatus fifth';
-            break;
-          case 5:
-            currentData['statusClass'] = 'gridStatus sixth';
-            break;
-          case 6:
-            currentData['statusClass'] = 'gridStatus seventh';
-            break;
-          default:
-            break;
-        }
-      }
+      // if (currentData.FinalsResult == 0) {
+      currentData['statusClass'] = '';
+      // } else {
+      //   switch (index) {
+      //     case 0:
+      //       currentData['statusClass'] = 'gridStatus first';
+      //       break;
+      //     case 1:
+      //       currentData['statusClass'] = 'gridStatus second';
+      //       break;
+      //     case 2:
+      //       currentData['statusClass'] = 'gridStatus third';
+      //       break;
+      //     case 3:
+      //       currentData['statusClass'] = 'gridStatus fourth';
+      //       break;
+      //     case 4:
+      //       currentData['statusClass'] = 'gridStatus fifth';
+      //       break;
+      //     case 5:
+      //       currentData['statusClass'] = 'gridStatus sixth';
+      //       break;
+      //     case 6:
+      //       currentData['statusClass'] = 'gridStatus seventh';
+      //       break;
+      //     default:
+      //       break;
+      //   }
+      // }
     });
   }
   isAlreadyAvailable(value: string, objArray: StudentObj[]) {

@@ -57,10 +57,13 @@ export class HomeComponent implements OnInit, OnDestroy {
       console.log('finalistsData', this.finalistsData);
       this.finalistsData.forEach((element: StudentObj) => {
         if (element?.state) {
-          const scoreEle = document.getElementById(
-            element.state.toLowerCase()
-          ) as HTMLElement;
-          scoreEle.innerText = element.FinalsResult;
+          const scoreEleArray = Array.from(
+            document.querySelectorAll('#' + element.state.toLowerCase())
+          ) as any;
+          for (let index = 0; index < scoreEleArray.length; index++) {
+            const scoreEle = scoreEleArray[index] as HTMLElement;
+            scoreEle.innerText = element.FinalsResult;
+          }
         }
       });
     } catch (error) {
